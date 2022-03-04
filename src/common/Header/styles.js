@@ -28,6 +28,7 @@ export const styles = theme => ({
         marginLeft: -12,
         marginRight: 5,
         color: "#ffde84",
+        zIndex: 1,
     },
     menuItem: {
         color: "#ffff",
@@ -72,7 +73,7 @@ export const styles = theme => ({
         marginLeft: 60,
     },
     homeLinkArea: {
-        width: "500px",
+        width: "300px",
         height: "100px",
     },
 });

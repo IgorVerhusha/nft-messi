@@ -182,11 +182,6 @@ const Register = (props) => {
                             </IconButton>
                             <div className={classes.spacer}></div>
                             <div className={classes.spacer}></div>
-                            <div className={classes.spacer}></div>
-                            <div className={classes.spacer}></div>
-                            <div className={classes.spacer}></div>
-                            <div className={classes.spacer}></div>
-                            <div className={classes.spacer}></div>
                             <IconButton className={classes.panelButtonBack} color="inherit" component={Link} to="/loginpanel">
                                 <Icon>arrow_back_ios</Icon>
                                 <Typography className={classes.panelButtonBackText}>&nbsp;Back</Typography>
@@ -215,10 +210,6 @@ const Register = (props) => {
                             <IconButton className={classes.panelButton} color="inherit" component={Link} to="/verifyidentity">
                                 <Typography className={classes.panelButtonText}>&nbsp;NEXT</Typography>
                             </IconButton>
-                            <div className={classes.spacer}></div>
-                            <div className={classes.spacer}></div>
-                            <div className={classes.spacer}></div>
-                            <div className={classes.spacer}></div>
                             <div className={classes.spacer}></div>
                             <div className={classes.spacer}></div>
                             <IconButton className={classes.panelButtonBack} color="inherit" component={Link} to="/">

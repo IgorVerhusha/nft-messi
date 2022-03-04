@@ -217,7 +217,7 @@ const Auction = (props) => {
     const buildLeftStyle = () => {
         let style = {};
         if (isTabletOrMobile) {
-            style.top = "52%";
+            style.bottom = "10%";
             style.left = "-2%";
         } else {
             style.top = "76%";
@@ -229,8 +229,8 @@ const Auction = (props) => {
     const buildRightStyle = () => {
         let style = {};
         if (isTabletOrMobile) {
-            style.top = "52%";
-            style.left = "-2%";
+            style.top = "5%";
+            style.left = "50%";
         } else {
             style.top = "18%";
             style.right = "2%";
@@ -377,10 +377,10 @@ const Auction = (props) => {
                     </Typography>
                     <div className={classes.auctionDetailContainer}>
                         <StyledTabs value={selectedTabIndex} onChange={handleTabChange} aria-label="styled tabs example">
-                            <StyledTab label="Bids" />
-                            <StyledTab label="Info" />
-                            <StyledTab label="Experience" />
-                            <StyledTab label="History" />
+                            <StyledTab label="Bids" className={classes.button}/>
+                            <StyledTab label="Info" className={classes.button}/>
+                            <StyledTab label="Experience" className={classes.button}/>
+                            <StyledTab label="History" className={classes.button}/>
                         </StyledTabs>
                         <TabPanel value={selectedTabIndex} index={0} className={classes.tabPanel}>
                             <div className={classes.bidsTableContainer}>

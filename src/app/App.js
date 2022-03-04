@@ -19,9 +19,7 @@ import { AppContextProvider } from '../services/AppService';
 import './App.css';
 
 
-const App = (props) => {
-
-  console.log("================================== App ======================================");
+const App = () => {
 
   // Init Data Service
   DataService.Init();

@@ -10,7 +10,7 @@ export const useAppContext = () => {
 
 // Setup App Reducer
 let initialState = {
-    drawerOpen: true,
+    drawerOpen: false,
     menuDisabled: false,
     selectedDrawerItem: '',
     background: 'blank',
@@ -47,7 +47,7 @@ const reducer = (state, action) => {
     }
 };
 
-// Enum Context Provider 
+// Enum Context Provider
 export function AppContextProvider({ children }) {
 
     // Auth Reducer

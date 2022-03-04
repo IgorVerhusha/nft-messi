@@ -33,10 +33,25 @@ const styles = theme => ({
         display: "grid",
         textAlign: "center",
         position: "fixed",
+        [theme.breakpoints.down('sm')]: {
+            width: "auto",
+            margin: "0 auto",
+            left: '50%',
+            transform: 'translate(-50%)',
+        },
     },
     auctionDetailContainer: {
         width: 400,
         marginLeft: "200px",
+        [theme.breakpoints.down('sm')]: {
+            margin: "0 auto",
+            width: 360,
+        },
+    },
+    button: {
+        [theme.breakpoints.down('sm')]: {
+            marginRight: "10px",
+        },
     },
     auctionContainer: {
         marginTop: "20px",
@@ -54,6 +69,12 @@ const styles = theme => ({
     auctionTitle2: {
         fontSize: "3.5rem",
         letterSpacing: "0.15em",
+        [theme.breakpoints.down('md')]: {
+            fontSize: "2rem",
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "1.5rem",
+        },
     },
     auctionTitle3: {
         fontSize: "1.1rem",
@@ -68,23 +89,6 @@ const styles = theme => ({
         fontSize: "0.95rem",
         fontWeight: 600,
         marginTop: "10px",
-    },
-    panelButton: {
-        color: "#000000",
-        backgroundColor: "#fadf78",
-        marginLeft: "1.2rem",
-        marginRight: "1.5rem",
-        paddingTop: 10,
-        paddingBottom: 10,
-        paddingLeft: 50,
-        paddingRight: 50,
-        borderRadius: "22px",
-        background: "-webkit-linear-gradient(#fadf78, #f6edd3)",
-    },
-    panelButtonText: {
-        fontSize: "0.95rem",
-        fontWeight: 800,
-        letterSpacing: "0.1em",
     },
     tabPanel: {
         paddingTop: "10px",
@@ -101,6 +105,12 @@ const styles = theme => ({
     },
     bidsTableContainer: {
         minHeight: "240px",
+        [theme.breakpoints.down('xl')]: {
+            minHeight: "200px",
+        },
+        [theme.breakpoints.down('md')]: {
+            minHeight: "120px",
+        },
     },
     placeBidContainer: {
         marginTop: 10,

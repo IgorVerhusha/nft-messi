@@ -8,7 +8,7 @@ const styles = theme => ({
         bottom: 0,
         left: "auto",
         right: 0,
-        position: "fixed"
+        position: "fixed",
     },
     grow: {
         flexGrow: 1,

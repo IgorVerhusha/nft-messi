@@ -23,6 +23,7 @@ const Content = props => {
         let style = {
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
+            backgroundColor: "#11100c",
             position: "fixed",
             top: 0,
         };
@@ -39,6 +40,7 @@ const Content = props => {
                 style.backgroundImage = "url('/messi_mobile.png')";
             } else if (app.state.background == 'auction') {
                 style.backgroundImage = "url('/auction_mobile.png')";
+                style.backgroundSize = "100%";
             } else {
                 style.backgroundImage = "url('/background_mobile.png')";
             }

@@ -3,8 +3,8 @@ const styles = theme => ({
     root: {
         flexGrow: 1,
         top: "25%",
-        left: "auto",
-        right: "40%",
+        width: '100%',
+        margin: '0 auto',
         position: "fixed",
     },
     grow: {

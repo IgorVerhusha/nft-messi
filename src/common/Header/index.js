@@ -21,6 +21,7 @@ import { useAuthContext } from "../../services/AuthService";
 import { useNotificationContext } from "../../services/NotificationService";
 import { useAppContext } from '../../services/AppService';
 import { styles } from './styles';
+import NavMenu from '../../components/NavMenu/index.js'
 
 const Header = (props) => {
     const { classes } = props;
@@ -75,6 +76,7 @@ const Header = (props) => {
                             <MenuIcon />
                         </IconButton>
                     }
+                    {isTabletOrMobile && app.state.drawerOpen && <NavMenu/>}
                     {!isTabletOrMobile &&
                         <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" component={Link} to="/">
                             <span className={classes.homeLinkArea}> </span>

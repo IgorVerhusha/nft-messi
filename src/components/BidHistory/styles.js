@@ -1,9 +1,9 @@
 
 const styles = theme => ({
     root: {
-        flexGrow: 1,
+        width: '100%',
         top: "20%",
-        left: "30%",
+        margin: "0 auto",
         position: "fixed",
     },
     grow: {
@@ -19,9 +19,6 @@ const styles = theme => ({
         padding: "5px",
     },
     panel: {
-        width: 600,
-        margin: "0 auto",
-        display: "grid",
         textAlign: "center",
     },
 });

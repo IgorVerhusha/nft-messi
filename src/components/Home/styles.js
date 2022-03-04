@@ -3,6 +3,11 @@ const styles = theme => ({
     root: {
         flexGrow: 1,
         position: "fixed",
+        [theme.breakpoints.down('sm')]: {
+            width: "100%",
+            margin: "0 auto"
+        },
+
     },
     grow: {
         flexGrow: 1,
@@ -25,14 +30,22 @@ const styles = theme => ({
         display: "grid",
         textAlign: "center",
     },
+    auctionTitleContainer: {
+        textAlign: "center",
+    },
     auctionContainer: {
         marginTop: "20px",
+
     },
     auctionTitle: {
         color: "#ffffff",
-        fontSize: "1.5rem",
+        fontSize: "1.3rem",
         fontWeight: 700,
         letterSpacing: "0.1em",
+        textAlign: 'center',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: "1rem",
+        },
     },
     auctionCountdownContainer: {
         color: "#ffffff",
@@ -56,6 +69,10 @@ const styles = theme => ({
         paddingRight: 50,
         borderRadius: "22px",
         background: "-webkit-linear-gradient(#fadf78, #f6edd3)",
+        [theme.breakpoints.down('xs')]: {
+            paddingLeft: 30,
+            paddingRight: 30,
+        },
     },
     panelButtonText: {
         fontSize: "0.95rem",

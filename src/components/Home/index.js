@@ -61,7 +61,7 @@ const Home = (props) => {
             style.top = "52%";
             style.left = "-2%";
         } else {
-            style.top = "53%";
+            style.bottom = "6%";
             style.left = "48%";
         }
 
@@ -77,7 +77,7 @@ const Home = (props) => {
                     <div className={classes.panel}>
                         <div className={classes.auctionContainer}>
                             {auction && !auction.live && !auction.ended &&
-                                <div>
+                                <div className={classes.auctionTitleContainer}>
                                     <Typography className={classes.auctionTitle}>
                                         AUCTION STARTS IN:
                                     </Typography>
