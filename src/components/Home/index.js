@@ -100,6 +100,7 @@ const Home = (props) => {
                                         <Countdown startDate={auction.auction_end}></Countdown>
                                     </div>
                                     <div className={classes.spacer}></div>
+                                    <div className={classes.buttons}>
                                     {!auth.state.isAuthenticated &&
                                         <IconButton className={classes.panelButton} color="inherit" component={Link} to="/loginpanel">
                                             <Typography className={classes.panelButtonText}>&nbsp;SIGN IN</Typography>
@@ -108,6 +109,7 @@ const Home = (props) => {
                                     <IconButton className={classes.panelButton} color="inherit" component={Link} to="/auction">
                                         <Typography className={classes.panelButtonText}>&nbsp;VIEW</Typography>
                                     </IconButton>
+                                    </div>
                                     <div className={classes.spacer}></div>
                                 </div>
                             }

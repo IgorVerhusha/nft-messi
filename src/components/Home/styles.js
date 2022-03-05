@@ -75,6 +75,9 @@ const styles = theme => ({
             paddingRight: 30,
         },
     },
+    buttons: {
+      display: 'flex',
+    },
     panelButtonText: {
         fontSize: "0.95rem",
         fontWeight: 800,
