@@ -8,7 +8,9 @@ const DataService = {
         // Any application initialization logic comes here
     },
     GetAuctionDetails: async function () {
-        return await axios.get(BASE_API_URL + "/auction", { headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'} });
+        return await axios.get(BASE_API_URL + "/auction", { headers: {                  'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Headers': '*',
+                'Access-Control-Allow-Credentials': 'true'} });
     },
     SaveAuctionDetails: async function (auction) {
         return await axios.put(BASE_API_URL + "/auction", auction, { headers: authHeader() });
