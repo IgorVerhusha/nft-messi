@@ -25,9 +25,7 @@ const styles = theme => ({
         padding: "5px",
     },
     panel: {
-        width: 400,
         margin: "0 auto",
-        display: "grid",
         textAlign: "center",
     },
     auctionTitleContainer: {

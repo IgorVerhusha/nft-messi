@@ -2,9 +2,12 @@ const styles = theme => ({
     root: {
         flexGrow: 1,
         top: "15%",
-        left: "auto",
-        right: "30%",
+        width: '100%',
+        height: '100%',
+        margin: '0 auto',
         position: "fixed",
+        overflowX: 'auto',
+        overflowY: 'auto',
     },
     grow: {
         flexGrow: 1,

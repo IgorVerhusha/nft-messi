@@ -51,7 +51,7 @@ const NavMenu = (props) => {
                     }
                     {auth.state.isAuthenticated && auth.state.account_type == "user" &&
                             <IconButton className={classes.menuItem} color="inherit" component={Link} to="/bidhistory">
-                                <Typography variant="caption">&nbsp;Bid History</Typography>
+                                <Typography variant="caption" onClick={handleClose}>&nbsp;Bid History</Typography>
                             </IconButton>
                     }
                     <IconButton className={classes.menuItem} color="inherit" component={Link} to="/contact">
@@ -66,7 +66,7 @@ const NavMenu = (props) => {
                     {auth.state.isAuthenticated &&
                             <>
                                 <IconButton className={classes.menuItem} color="inherit" onClick={openSettingsMenu}>
-                                    <Typography variant="caption">&nbsp;Account</Typography>
+                                    <Typography variant="caption" onClick={closeSettingsMenu}>&nbsp;Account</Typography>
                                 </IconButton>
                                 <Menu
                                         anchorEl={settingsMenuAnchorEl}
@@ -76,9 +76,9 @@ const NavMenu = (props) => {
                                 >
                                     {auth.state.account_type == "user" &&
                                             [
-                                                <MenuItem key="0" component={Link} to="/verifyidentity" onClick={closeSettingsMenu}>Verification</MenuItem>,
+                                                <MenuItem key="0" component={Link} to="/verifyidentity" onClick={handleClose}>Verification</MenuItem>,
                                                 <Divider key="1" />,
-                                                <MenuItem key="2" component={Link} to="/userdetails" onClick={closeSettingsMenu}>User Details</MenuItem>,
+                                                <MenuItem key="2" component={Link} to="/userdetails" onClick={handleClose}>User Details</MenuItem>,
                                                 <Divider key="3" />
                                             ]
                                     }

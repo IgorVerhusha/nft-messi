@@ -9,7 +9,7 @@ export const authHeader = () => {
     const auth = JSON.parse(localStorage.getItem('auth'));
 
     if (auth && auth.access_token) {
-        return { Authorization: 'Bearer ' + auth.access_token };
+        return { Authorization: 'Bearer ' + auth.access_token, 'Access-Control-Allow-Origin': '*' };
     } else {
         return {};
     }
@@ -18,7 +18,7 @@ export const authHeader = () => {
 export const authHeaderFromLogin = (login) => {
 
     if (login && login.access_token) {
-        return { Authorization: 'Bearer ' + login.access_token };
+        return { Authorization: 'Bearer ' + login.access_token, 'Access-Control-Allow-Origin': '*' };
     } else {
         return {};
     }
@@ -277,7 +277,8 @@ const AuthService = {
         return await axios.post(BASE_API_URL + "/profile_document_upload?upload_type=" + upload_type, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
-                'Authorization': authHeader().Authorization
+                'Authorization': authHeader().Authorization,
+                'Access-Control-Allow-Origin': '*'
             }
         });
     },

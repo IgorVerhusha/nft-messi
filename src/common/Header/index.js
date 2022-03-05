@@ -4,8 +4,6 @@ import { useMediaQuery } from 'react-responsive';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Icon from '@material-ui/core/Icon';
@@ -25,17 +23,12 @@ import NavMenu from '../../components/NavMenu/index.js'
 
 const Header = (props) => {
     const { classes } = props;
-
-    console.log("================================== Header ======================================");
-
-    // Get Context
     const auth = useAuthContext();
     const notifications = useNotificationContext();
     const app = useAppContext();
     const isTabletOrMobile = useMediaQuery({ maxWidth: TABLET_OR_MOBILE_MAX_WIDTH });
     const [settingsMenuAnchorEl, setSettingsMenuAnchorEl] = useState(null);
 
-    // State
 
     const errorTitles = {
         "error": "Error",
