@@ -1,7 +1,7 @@
 const styles = theme => ({
     root: {
         flexGrow: 1,
-        top: "20%",
+        top: "10%",
         width: '100%',
         margin: '0 auto',
         position: "fixed",

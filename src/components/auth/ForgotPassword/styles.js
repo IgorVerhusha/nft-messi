@@ -3,7 +3,8 @@ const styles = theme => ({
         flexGrow: 1,
         top: "20%",
         left: "auto",
-        right: "35%",
+        width: '100%',
+        margin: '0 auto',
         position: "fixed",
     },
     grow: {
@@ -24,6 +25,10 @@ const styles = theme => ({
         margin: "0 auto",
         display: "grid",
         textAlign: "center",
+        [theme.breakpoints.down('md')]: {
+            width: 300,
+            marginTop: "-100px"
+        },
     },
     inputContainer: {
         marginTop: "10px",

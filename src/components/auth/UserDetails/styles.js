@@ -1,13 +1,17 @@
 const styles = theme => ({
     root: {
         flexGrow: 1,
-        top: "15%",
+        top: "0",
         width: '100%',
-        height: '100%',
         margin: '0 auto',
         position: "fixed",
-        overflowX: 'auto',
-        overflowY: 'auto',
+        transform: 'scale(0.8)',
+        [theme.breakpoints.down('md')]: {
+            transform: 'scale(0.6)',
+        },
+        [theme.breakpoints.down('sm')]: {
+            transform: 'scale(0.4)',
+        },
     },
     grow: {
         flexGrow: 1,
@@ -27,6 +31,10 @@ const styles = theme => ({
         margin: "0 auto",
         display: "grid",
         textAlign: "center",
+        [theme.breakpoints.down('md')]: {
+            width: 400,
+            marginTop: "-100px"
+        },
     },
     panelThankyou: {
         width: 600,
