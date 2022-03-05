@@ -8,7 +8,8 @@ const DataService = {
         // Any application initialization logic comes here
     },
     GetAuctionDetails: async function () {
-        return await axios.get(BASE_API_URL + "/auction", {withCredentials: false, headers: {                  'Access-Control-Allow-Origin': '*',
+        return await axios.get(BASE_API_URL + "/auction", {withCredentials: false, headers: {
+            'Access-Control-Allow-Origin': '*',
                 'Access-Control-Allow-Headers': '*',
                 'Access-Control-Allow-Credentials': 'true',
                 'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',} });
