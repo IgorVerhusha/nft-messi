@@ -8,9 +8,6 @@ import {
 import Theme from "./Theme";
 import AppRoutes from "./AppRoutes";
 import Content from "../common/Content";
-import Header from "../common/Header";
-import Footer from "../common/Footer";
-import Background from '../common/Background';
 import DataService from '../services/DataService';
 import { AuthContextProvider } from '../services/AuthService';
 import { NotificationContextProvider } from '../services/NotificationService';

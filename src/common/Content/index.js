@@ -5,13 +5,15 @@ import { TABLET_OR_MOBILE_MAX_WIDTH } from '../../services/Common';
 import { useAppContext } from '../../services/AppService';
 import Header from "../Header";
 import Footer from "../Footer";
+import styles from "./styles"
+import {withStyles} from '@material-ui/core'
 
 const drawerWidth = 0;
 const paddingTop = 0;
 
 const Content = props => {
     const children = props.children;
-
+    const { classes } = props;
     // Get Context
     const app = useAppContext();
 
@@ -20,15 +22,7 @@ const Content = props => {
 
     // Methods
     const buildStyle = () => {
-        let style = {
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-            backgroundColor: "#11100c",
-            position: "fixed",
-            top: 0,
-        };
-
-
+        let style = {};
 
         if (isTabletOrMobile) {
             style.width = "100%";
@@ -63,7 +57,7 @@ const Content = props => {
     }
 
     return (
-        <div style={buildStyle()}>
+        <div style={buildStyle()} className={classes.root}>
             <Header></Header>
             {children}
             <Footer></Footer>
@@ -96,4 +90,4 @@ const Content = props => {
     // );
 }
 
-export default Content;
+export default withStyles(styles)(Content);

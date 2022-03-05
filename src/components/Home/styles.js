@@ -44,6 +44,9 @@ const styles = theme => ({
         [theme.breakpoints.down('xs')]: {
             fontSize: "1rem",
         },
+        [theme.breakpoints.down('xs')]: {
+            fontSize: "1rem",
+        },
     },
     auctionCountdownContainer: {
         color: "#ffffff",

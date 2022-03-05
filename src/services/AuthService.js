@@ -9,7 +9,7 @@ export const authHeader = () => {
     const auth = JSON.parse(localStorage.getItem('auth'));
 
     if (auth && auth.access_token) {
-        return { Authorization: 'Bearer ' + auth.access_token, 'Access-Control-Allow-Origin': '*' };
+        return { Authorization: 'Bearer ' + auth.access_token, 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json', };
     } else {
         return {};
     }
@@ -18,7 +18,7 @@ export const authHeader = () => {
 export const authHeaderFromLogin = (login) => {
 
     if (login && login.access_token) {
-        return { Authorization: 'Bearer ' + login.access_token, 'Access-Control-Allow-Origin': '*' };
+        return { Authorization: 'Bearer ' + login.access_token, 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json', };
     } else {
         return {};
     }

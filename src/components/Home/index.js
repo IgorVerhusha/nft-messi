@@ -17,8 +17,6 @@ import Countdown from '../Countdown';
 const Home = (props) => {
     const { classes } = props;
 
-    console.log("================================== Home ======================================");
-
     // Get Context
     const app = useAppContext();
     const auth = useAuthContext();
@@ -94,7 +92,7 @@ const Home = (props) => {
                                 </div>
                             }
                             {auction && auction.live &&
-                                <div>
+                                <div className={classes.countdownContainer}>
                                     <Typography className={classes.auctionTitle}>
                                         AUCTION IS LIVE - ENDS IN:
                                     </Typography>

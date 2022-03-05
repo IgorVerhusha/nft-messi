@@ -29,6 +29,16 @@ const Theme = createTheme({
             default: "#E7F4FB"
         },
     },
+    breakpoints: {
+        values: {
+            xs: 375,
+            sm: 440,
+            md: 640,
+            lg: 1024,
+            xl: 1280,
+            xxl: 1460,
+        },
+    },
     typography: {
         useNextVariants: true,
         h6: {
