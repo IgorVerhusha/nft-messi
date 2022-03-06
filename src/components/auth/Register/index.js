@@ -54,12 +54,21 @@ const Register = (props) => {
     }, [isAccountCreated]);
 
     const handleSubmitClick = () => {
+        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(password)) {
+            notifications.dispatch({
+                type: "DISPLAY_ALERT",
+                payload: { "message": "Password must contain minimum eight characters, at least one uppercase letter, one lowercase letter and one number, without specials symbols", "severity": "error" }
+            })
+            return;
+        }
         if (password != password2) {
             notifications.dispatch({
                 type: "DISPLAY_ALERT",
                 payload: { "message": "Passwords do not match", "severity": "error" }
             })
+            return;
         }
+
 
         AuthService.Signup(username, email, password, acceptTerms)
             .then(function (response) {

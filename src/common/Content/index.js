@@ -40,7 +40,6 @@ const Content = props => {
             }
         } else {
             style.width = "100%";
-            style.height = 0;
             style.paddingTop = "66.64%";
             if (app.state.background == 'blank') {
                 style.backgroundImage = "url('/background.png')";

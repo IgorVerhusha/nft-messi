@@ -16,7 +16,8 @@ const styles = theme => ({
     },
     container: {
         // marginTop: "18rem",
-        // marginLeft: "15rem",
+        // left: "20%",
+        marginLeft: "20%",
         paddingTop: theme.spacing(1),
     },
     spacer: {

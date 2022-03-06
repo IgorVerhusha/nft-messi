@@ -71,7 +71,7 @@ const Header = (props) => {
                     }
                     {isTabletOrMobile && app.state.drawerOpen && <NavMenu/>}
                     {!isTabletOrMobile &&
-                        <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" component={Link} to="/">
+                        <IconButton className={classes.menuButtonHomeArea} color="inherit" aria-label="Menu" component={Link} to="/">
                             <span className={classes.homeLinkArea}> </span>
                         </IconButton>
                     }

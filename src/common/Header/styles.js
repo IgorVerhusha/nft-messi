@@ -72,9 +72,17 @@ export const styles = theme => ({
     wrapIcon2: {
         marginLeft: 60,
     },
+    menuButtonHomeArea: {
+        marginLeft: -12,
+        marginTop: '2.5%',
+        marginRight: 5,
+        color: "#ffde84",
+        zIndex: 1,
+    },
     homeLinkArea: {
-        width: "300px",
-        height: "100px",
+        top: '100px',
+        width: "15vw",
+        height: "10vh",
     },
 });
 
