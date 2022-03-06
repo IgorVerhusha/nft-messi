@@ -5,6 +5,11 @@ const styles = theme => ({
         width: '100%',
         margin: '0 auto',
         position: "fixed",
+        [theme.breakpoints.down('md')]: {
+            display: 'flex',
+            justifyContent: 'center'
+        },
+
     },
     grow: {
         flexGrow: 1,
@@ -24,6 +29,7 @@ const styles = theme => ({
         margin: "0 auto",
         display: "grid",
         textAlign: "center",
+
     },
     inputContainer: {
         marginTop: "10px",
@@ -75,12 +81,24 @@ const styles = theme => ({
         height: "4rem",
         margin: "0 1rem",
         fontSize: "2rem",
-        borderRadius: "4px",
+        borderRadius: "24px",
         // border: "1px solid rgba(0, 0, 0, 0.3)",
         border: "2px solid #f3efde",
         backgroundColor: "black",
         color: "#f3efde",
+        [theme.breakpoints.down('md')]: {
+            width: "2rem !important",
+            borderRadius: "12px",
+            height: "3rem",
+            margin: "0 0.5rem",
+        },
     },
+    panelCode: {
+        width: 'fit-content',
+        margin: "0 auto",
+        display: "grid",
+        textAlign: "center",
+    }
 });
 
 export default styles;

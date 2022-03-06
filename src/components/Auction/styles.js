@@ -33,7 +33,7 @@ const styles = theme => ({
         display: "grid",
         textAlign: "center",
         position: "fixed",
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
             width: "auto",
             margin: "0 auto",
             left: '50%',

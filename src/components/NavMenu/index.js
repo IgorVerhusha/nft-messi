@@ -33,9 +33,9 @@ const NavMenu = (props) => {
     };
     return (
             <div className={classes.root}>
-                <div className={classes.menuContainer}>
-                    <IconButton className={classes.menuItemButton} color="inherit" component={Link} to="/">
-                        <Typography variant="caption" onClick={handleClose}>&nbsp;Main</Typography>
+                <div className={classes.menuContainer} >
+                    <IconButton className={classes.menuItemButton} color="inherit" component={Link} onClick={handleClose} to="/">
+                        <Typography variant="caption" >&nbsp;Main</Typography>
                     </IconButton>
                     {auth.state.isAuthenticated && auth.state.account_type == "user" && !auth.state.email_verified &&
                             <Typography variant="caption" className={classes.wrapIconContainer}>
@@ -50,17 +50,17 @@ const NavMenu = (props) => {
                             </Typography>
                     }
                     {auth.state.isAuthenticated && auth.state.account_type == "user" &&
-                            <IconButton className={classes.menuItem} color="inherit" component={Link} to="/bidhistory">
-                                <Typography variant="caption" onClick={handleClose}>&nbsp;Bid History</Typography>
+                            <IconButton className={classes.menuItem} color="inherit" component={Link} to="/bidhistory" onClick={handleClose}>
+                                <Typography variant="caption" >&nbsp;Bid History</Typography>
                             </IconButton>
                     }
-                    <IconButton className={classes.menuItem} color="inherit" component={Link} to="/contact">
-                        <Typography variant="caption"  onClick={handleClose}>&nbsp;Contact</Typography>
+                    <IconButton className={classes.menuItem} color="inherit" component={Link} to="/contact" onClick={handleClose}>
+                        <Typography variant="caption"  >&nbsp;Contact</Typography>
                     </IconButton>
 
                     {!auth.state.isAuthenticated &&
-                            <IconButton className={classes.menuItemButton} color="inherit" component={Link} to="/loginpanel">
-                                <Typography variant="caption"  onClick={handleClose}>&nbsp;Sign in</Typography>
+                            <IconButton className={classes.menuItemButton} color="inherit" component={Link} to="/loginpanel" onClick={handleClose}>
+                                <Typography variant="caption" >&nbsp;Sign in</Typography>
                             </IconButton>
                     }
                     {auth.state.isAuthenticated &&
@@ -100,6 +100,7 @@ const NavMenu = (props) => {
                             </>
                     }
                 </div>
+                <div className={classes.background} onClick={handleClose}/>
             </div>
     )
 }

@@ -1,5 +1,5 @@
 export const BASE_API_URL = process.env.REACT_APP_BASE_API_URL;
-export const TABLET_OR_MOBILE_MAX_WIDTH = 1024;
+export const TABLET_OR_MOBILE_MAX_WIDTH = 1023;
 
 export function GetUserDisplayName(username, full_name) {
     let display_name = "";

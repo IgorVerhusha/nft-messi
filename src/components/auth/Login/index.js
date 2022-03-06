@@ -20,8 +20,6 @@ const Login = (props) => {
     const { classes } = props;
     let history = useHistory();
 
-    console.log("================================== Login ======================================");
-
     // Get Context
     const auth = useAuthContext();
     const notifications = useNotificationContext();
@@ -165,7 +163,7 @@ const Login = (props) => {
     return (
         <div className={classes.root}>
             <main className={classes.main}>
-                <Container maxWidth="sm" className={classes.container}>
+                <Container className={classes.container}>
                     {!isOTPRequired &&
                         <div className={classes.panel}>
                             <Typography variant="h4">
@@ -224,7 +222,7 @@ const Login = (props) => {
                         </div>
                     }
                     {isOTPRequired &&
-                        <div className={classes.panel}>
+                        <div className={classes.panelCode}>
                             <Typography variant="h4">
                                 SIGN IN CODE
                             </Typography>

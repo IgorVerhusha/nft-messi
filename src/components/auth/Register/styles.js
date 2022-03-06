@@ -15,6 +15,7 @@ const styles = theme => ({
     container: {
         // marginTop: "10rem",
         paddingTop: theme.spacing(1),
+        maxWidth: 'auto',
     },
     spacer: {
         padding: "5px",
@@ -27,7 +28,7 @@ const styles = theme => ({
 
     },
     panelThankyou: {
-        width: 600,
+
         margin: "0 auto",
         display: "grid",
         textAlign: "center",

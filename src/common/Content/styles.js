@@ -10,7 +10,10 @@ const styles = theme => ({
             top: '-120px',
         },
         [theme.breakpoints.down('sm')]: {
-            top: '-80px',
+            top: '-30px',
+        },
+        [theme.breakpoints.down('xs')]: {
+            top: '0px',
         },
     },
 });
