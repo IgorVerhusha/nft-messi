@@ -8,12 +8,12 @@ const styles = theme => ({
         flexGrow: 1,
     },
     background: {
-        backgroundImage: "url('/nft.png')",
+        backgroundImage: "url('/nft.jpg')",
         height: '300px',
         backgroundSize: '100%',
     },
     backgroundMain: {
-        backgroundImage: "url('/nft.png')",
+        backgroundImage: "url('/nft.jpg')",
         height: '300px',
         backgroundSize: '100%',
         position: 'fixed',

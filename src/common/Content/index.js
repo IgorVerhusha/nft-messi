@@ -33,6 +33,7 @@ const Content = props => {
             } else if (app.state.background == 'messi') {
                 style.backgroundImage = "url('/messi_mobile.png')";
             } else if (app.state.background == 'auction') {
+                style.backgroundImage = "url('/chlenososy.jpg')";
                 style.backgroundSize = "100%";
             } else {
                 style.backgroundImage = "url('/background_mobile.png')";
