@@ -60,6 +60,7 @@ const Home = (props) => {
             style.left = "-2%";
         } else {
             style.bottom = "6%";
+            style.right = "22%";
             style.left = "48%";
         }
 
