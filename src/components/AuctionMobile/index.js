@@ -377,7 +377,7 @@ const AuctionMobile = (props) => {
                     </Typography>
                     <div className={classes.auctionDetailContainer}>
                         <StyledTabs value={selectedTabIndex} onChange={handleTabChange} aria-label="styled tabs example">
-                            <StyledTab label="Nft" className={classes.button}/>
+                            <StyledTab label="View" className={classes.button}/>
                             <StyledTab label="Bids" className={classes.button}/>
                             <StyledTab label="Info" className={classes.button}/>
                             <StyledTab label="Experience" className={classes.button}/>
