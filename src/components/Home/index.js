@@ -57,7 +57,6 @@ const Home = (props) => {
 
         if (isTabletOrMobile) {
             style.top = "52%";
-            style.left = "-2%";
         } else {
             style.bottom = "6%";
             style.right = "17%";
