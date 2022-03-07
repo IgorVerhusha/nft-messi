@@ -20,11 +20,15 @@ import Users from "../components/admin/Users";
 import Bids from "../components/admin/Bids";
 import Auction from "../components/Auction";
 import { useAuthContext } from "../services/AuthService";
+import {useMediaQuery} from 'react-responsive'
+import {TABLET_OR_MOBILE_MAX_WIDTH} from '../services/Common.js'
+import AuctionMobile from '../components/AuctionMobile/index.js'
 
 
 const AppRouter = (props) => {
 
   console.log("================================== AppRouter ======================================");
+    const isTabletOrMobile = useMediaQuery({ maxWidth: TABLET_OR_MOBILE_MAX_WIDTH });
 
   function AuthenticatedRoute({ component: Component, ...rest }) {
     // Get Auth Context
@@ -75,7 +79,7 @@ const AppRouter = (props) => {
     <React.Fragment>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/auction" exact component={Auction} />
+        <Route path="/auction" exact component={isTabletOrMobile ? AuctionMobile : Auction} />
         <Route path="/login" exact component={Login} />
         <Route path="/loginpanel" exact component={LoginPanel} />
         <Route path="/logout" exact component={Logout} />

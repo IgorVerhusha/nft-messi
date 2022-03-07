@@ -41,7 +41,6 @@ const LoginPanel = (props) => {
             <main className={classes.main}>
                 <Container maxWidth="sm" className={classes.container}>
                     <div className={classes.panel}>
-
                         <IconButton className={classes.panelButton} color="inherit" component={Link} to="/login">
                             <Typography className={classes.panelButtonText}>&nbsp;SIGN IN</Typography>
                         </IconButton>
