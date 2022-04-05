@@ -5,8 +5,8 @@ import { TABLET_OR_MOBILE_MAX_WIDTH } from '../../services/Common';
 import { useAppContext } from '../../services/AppService';
 import Header from "../Header";
 import Footer from "../Footer";
-import styles from "./styles"
 import {withStyles} from '@material-ui/core'
+import './content.scss'
 
 const drawerWidth = 0;
 const paddingTop = 0;
@@ -21,45 +21,45 @@ const Content = props => {
     const isTabletOrMobile = useMediaQuery({ maxWidth: TABLET_OR_MOBILE_MAX_WIDTH });
 
     // Methods
-    const buildStyle = () => {
-        let style = {};
-
-        if (isTabletOrMobile) {
-            style.width = "100%";
-            style.height = 0;
-            style.paddingTop = "177.5%";
-            if (app.state.background == 'blank') {
-                style.backgroundImage = "url('/background_mobile.png')";
-            } else if (app.state.background == 'messi') {
-                style.backgroundImage = "url('/messi_mobile.png')";
-            } else if (app.state.background == 'auction') {
-                style.backgroundImage = "url('/chlenososy.jpg')";
-                style.backgroundSize = "100%";
-            } else {
-                style.backgroundImage = "url('/background_mobile.png')";
-            }
-        } else {
-            style.width = "100%";
-            style.paddingTop = "66.64%";
-            if (app.state.background == 'blank') {
-                style.backgroundImage = "url('/background.png')";
-            } else if (app.state.background == 'messi') {
-                style.backgroundImage = "url('/messi.png')";
-            } else if (app.state.background == 'auction') {
-                style.backgroundImage = "url('/auction.png')";
-            } else {
-                style.backgroundImage = "url('/background.png')";
-            }
-        }
-
-        return style;
-    }
+    // const buildStyle = () => {
+    //     let style = {};
+    //
+    //     if (isTabletOrMobile) {
+    //         style.width = "100%";
+    //         style.height = 0;
+    //         style.paddingTop = "177.5%";
+    //         if (app.state.background == 'blank') {
+    //             style.backgroundImage = "url('/background_mobile.png')";
+    //         } else if (app.state.background == 'messi') {
+    //             style.backgroundImage = "url('/messi_mobile.png')";
+    //         } else if (app.state.background == 'auction') {
+    //             style.backgroundImage = "url('/chlenososy.jpg')";
+    //             style.backgroundSize = "100%";
+    //         } else {
+    //             style.backgroundImage = "url('/background_mobile.png')";
+    //         }
+    //     } else {
+    //         style.width = "100%";
+    //         style.paddingTop = "66.64%";
+    //         if (app.state.background == 'blank') {
+    //             style.backgroundImage = "url('/background.png')";
+    //         } else if (app.state.background == 'messi') {
+    //             style.backgroundImage = "url('/messi.png')";
+    //         } else if (app.state.background == 'auction') {
+    //             style.backgroundImage = "url('/auction.png')";
+    //         } else {
+    //             style.backgroundImage = "url('/background.png')";
+    //         }
+    //     }
+    //
+    //     return style;
+    // }
 
     return (
-        <div style={buildStyle()} className={classes.root}>
-            <Header></Header>
+        <div className="wrapper">
+            <Header/>
             {children}
-            <Footer></Footer>
+            <Footer/>
         </div>
     );
 
@@ -89,4 +89,4 @@ const Content = props => {
     // );
 }
 
-export default withStyles(styles)(Content);
+export default Content;

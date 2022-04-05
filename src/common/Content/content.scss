@@ -1,0 +1,63 @@
+body {
+  overflow: hidden;
+  padding: 3.125vw 3.646vw;
+  position: relative;
+  height: 100vh;
+  .wrapper {
+    width: 100%;
+    height: 100%;
+
+    .menu-mobile {
+      display: none;
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media (min-aspect-ratio: 640/322) and (min-width: 1024px) {
+  body {
+    overflow: auto;
+    height: 53vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    .wrapper {
+      .main {
+        .messi {
+          width: 44vw;
+          left: 4vw;
+        }
+        .main__title {
+          top: 50%;
+          transform: translateY(-85%);
+        }
+        .main__description-container {
+          top: 50%;
+          transform: translateY(50%);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 5.333vw 4vw;
+  }
+}
+@media (min-aspect-ratio: 375/667) and (max-width: 768px) {
+  body {
+    overflow: auto;
+    height: 178vw;
+  }
+}

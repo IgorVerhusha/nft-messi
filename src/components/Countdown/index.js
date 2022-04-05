@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { withStyles } from '@material-ui/core';
 
-import styles from './styles';
+import './timer.scss';
 
 
 const Countdown = (props) => {
@@ -58,29 +58,47 @@ const Countdown = (props) => {
         setSeconds(seconds);
         setExpired(false);
     };
-
+    console.log('rerere')
     return (
         <div>
             {expired && <div className="expired">Expired</div>}
             {!expired &&
-                <div className={classes.timerContainer}>
-                    <div className={classes.timer}>
-                        <div className={classes.timerNumber}>{days}</div>
-                        <div className={classes.timerText}>DAYS</div>
+                    <div className="timer">
+                        <div className="timer-elem">
+                            <span className="time-number">{days}</span>
+                            <span className="time-text">DAYS</span>
+                        </div>
+                        <div className="timer-elem">
+                            <span className="time-number">{hours}</span>
+                            <span className="time-text">HOURS</span>
+                        </div>
+                        <div className="timer-elem">
+                            <span className="time-number">{minutes}</span>
+                            <span className="time-text">MIN</span>
+                        </div>
+                        <div className="timer-elem">
+                            <span className="time-number">{seconds}</span>
+                            <span className="time-text">SEC</span>
+                        </div>
                     </div>
-                    <div className={classes.timer}>
-                        <div className={classes.timerNumber}>{hours}</div>
-                        <div className={classes.timerText}>HOURS</div>
-                    </div>
-                    <div className={classes.timer}>
-                        <div className={classes.timerNumber}>{minutes}</div>
-                        <div className={classes.timerText}>MIN</div>
-                    </div>
-                    <div className={classes.timer}>
-                        <div className={classes.timerNumber}>{seconds}</div>
-                        <div className={classes.timerText}>SEC</div>
-                    </div>
-                </div>
+                // <div className={classes.timerContainer}>
+                //     <div className={classes.timer}>
+                //         <div className={classes.timerNumber}>{days}</div>
+                //         <div className={classes.timerText}>DAYS</div>
+                //     </div>
+                //     <div className={classes.timer}>
+                //         <div className={classes.timerNumber}>{hours}</div>
+                //         <div className={classes.timerText}>HOURS</div>
+                //     </div>
+                //     <div className={classes.timer}>
+                //         <div className={classes.timerNumber}>{minutes}</div>
+                //         <div className={classes.timerText}>MIN</div>
+                //     </div>
+                //     <div className={classes.timer}>
+                //         <div className={classes.timerNumber}>{seconds}</div>
+                //         <div className={classes.timerText}>SEC</div>
+                //     </div>
+                // </div>
             }
 
         </div>
@@ -88,4 +106,4 @@ const Countdown = (props) => {
 
 };
 
-export default withStyles(styles)(Countdown);
+export default Countdown;

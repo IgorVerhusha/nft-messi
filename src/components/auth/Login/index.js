@@ -81,9 +81,6 @@ const Login = (props) => {
         AuthService.Login(username, password)
             .then(function (response) {
                 setLogin(response.data);
-
-                // If "account_type":"user" perform OTP
-                if (response.data.account_type === "admin") {
                     // Login
                     auth.dispatch({
                         type: "LOGIN",
@@ -91,22 +88,6 @@ const Login = (props) => {
                     })
                     // Set authenticated flag
                     setIsAuthenticated(true);
-                } else {
-                    setIsOTPRequired(true);
-
-                    // Generate OTP Code
-                    AuthService.SendOTP(response.data)
-                        .then(function (response) {
-                            console.log(response.data);
-                        })
-                        .catch(function (error) {
-                            console.log(error.response);
-                            notifications.dispatch({
-                                type: "DISPLAY_ALERT",
-                                payload: { "message": error.response.data.detail, "severity": "error" }
-                            })
-                        })
-                }
             })
             .catch(function (error) {
                 console.log(error.response);

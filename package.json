@@ -52,5 +52,8 @@
   },
   "resolutions": {
     "react-scripts/eslint-webpack-plugin": "2.3.0"
+  },
+  "devDependencies": {
+    "sass": "^1.49.11"
   }
 }

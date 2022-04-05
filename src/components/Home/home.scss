@@ -1,0 +1,136 @@
+.messi {
+  position: absolute;
+  left: 10.625vw;
+  width: 34.531vw;
+  bottom: 4.115vw;
+}
+.main__title {
+  position: absolute;
+  top: 14.115vw;
+  left: 50.234vw;
+  img {
+    width: 36.25vw;
+  }
+  p {
+    margin: 3.698vw 0 0 0;
+    font-weight: 700;
+    font-size: 1.042vw;
+    line-height: 1.458vw;
+    text-align: center;
+    color: #ffffff;
+    br:nth-child(1) {
+      display: none;
+    }
+  }
+}
+
+.main__description-container {
+  position: absolute;
+  left: 59.714vw;
+  top: 33.5vw;
+
+  .main__description {
+    display: block;
+    font-weight: 600;
+    font-size: 0.938vw;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .main__button {
+    display: block;
+    margin: 2.135vw auto 0;
+    border: none;
+    width: 8.542vw;
+    height: 2.708vw;
+    background: #d8b45d;
+    font-weight: 500;
+    font-size: 0.99vw;
+    text-align: center;
+    color: #000000;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    &:hover {
+      background: linear-gradient(180deg, #fadf78 27.72%, #f7e9ba 78.26%);
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .messi {
+    width: 44vw;
+    left: 4vw;
+  }
+  .main__title {
+    top: 50%;
+    transform: translateY(-85%);
+  }
+  .main__description-container {
+    top: 50%;
+    transform: translateY(50%);
+  }
+}
+
+@media (min-aspect-ratio: 512/295) and (max-width: 1024px) {
+  .messi {
+    bottom: auto;
+    top: 10vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .messi {
+    width: 94.667vw;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40.779610194903vh;
+  }
+  .main__title {
+    width: 100%;
+    top: 17.391304347826vh;
+
+    left: 50%;
+    transform: translateX(-50%);
+    img {
+      display: block;
+      width: 71.733vw;
+      margin: 0 auto;
+    }
+    p {
+      margin: 4.533vw 0 0 0;
+      font-size: 4vw;
+      line-height: 6.4vw;
+      br:nth-child(1) {
+        display: block;
+      }
+      br:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+  .main__description-container {
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+    bottom: 13.333vw;
+
+    .main__description {
+      font-size: 3.733vw;
+    }
+    .main__button {
+      margin: 8vw auto 0;
+      width: 34.667vw;
+      height: 12.267vw;
+      font-size: 4vw;
+    }
+  }
+}
+
+@media (min-aspect-ratio: 375/667) and (max-width: 768px) {
+  .messi {
+    top: auto;
+    bottom: 6.667vw;
+  }
+  .main__title {
+    top: 30.933vw;
+  }
+}
