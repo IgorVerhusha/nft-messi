@@ -48,7 +48,7 @@ const Home = () => {
 
 
     return (
-            <div>
+            <div className="home-wrapper">
                 <video className="background" autoPlay muted loop>
                     <source src="background.mp4" tupe="video/mp4"/>
                 </video>

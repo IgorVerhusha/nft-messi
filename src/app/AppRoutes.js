@@ -79,7 +79,7 @@ const AppRouter = (props) => {
     <React.Fragment>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/auction" exact component={isTabletOrMobile ? AuctionMobile : Auction} />
+        <Route path="/auction" exact component={Auction} />
         <Route path="/login" exact component={Login} />
         <Route path="/loginpanel" exact component={LoginPanel} />
         <Route path="/logout" exact component={Logout} />

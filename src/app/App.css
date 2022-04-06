@@ -1,22 +1,33 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0-modified | 20110126
+   License: none (public domain)
+*/
+ ul, li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
 
 #bg {
     /* position: fixed; */
     top: 0;
     left: 0;
-    /* width: 200%; 
+    /* width: 200%;
     height: 200%; */
-    top: -50%; 
+    top: -50%;
     left: -50%;
     z-index: -1;
     /* filter: brightness(70%); */
     /* background-color: #1e1e1a; */
   }
   #bg img {
-    position: fixed; 
+    position: fixed;
     top: 0;
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
     /* margin: auto; */
     min-width: 50%;
     min-height: 50%;
@@ -27,4 +38,3 @@
   }
 
 
- 

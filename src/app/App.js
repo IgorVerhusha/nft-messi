@@ -12,7 +12,7 @@ import DataService from '../services/DataService';
 import { AuthContextProvider } from '../services/AuthService';
 import { NotificationContextProvider } from '../services/NotificationService';
 import { AppContextProvider } from '../services/AppService';
-
+import './fonts.css';
 import './App.css';
 
 
