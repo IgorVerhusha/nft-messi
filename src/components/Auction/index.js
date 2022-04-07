@@ -39,7 +39,7 @@ import {useAppContext} from '../../services/AppService'
 import {useAuthContext} from '../../services/AuthService'
 import {useNotificationContext} from '../../services/NotificationService'
 import DataService from '../../services/DataService'
-import styles from './styles'
+import styles from './styles.js'
 import './aution.scss'
 import Countdown from '../Countdown'
 import {StyledTab, StyledTabs} from '../../app/StyledComponents'
@@ -147,7 +147,7 @@ const Auction = (props) => {
     }, [pageNumber, pageSize])
 
     // Component Handlers
-    const handleTabChange = (event, newValue) => {
+    const handleTabChange = (newValue) => {
         setSelectedTabIndex(newValue)
     }
     const handlePlaceBid = () => {
@@ -212,31 +212,6 @@ const Auction = (props) => {
         setPageNumber(0)
     }
 
-    // Component Methods
-    const buildLeftStyle = () => {
-        let style = {}
-        if (isTabletOrMobile) {
-            style.bottom = '10%'
-            style.left = '-2%'
-        } else {
-            style.top = '76%'
-            style.left = '17%'
-        }
-
-        return style
-    }
-    const buildRightStyle = () => {
-        let style = {}
-        if (isTabletOrMobile) {
-            style.top = '5%'
-            style.left = '50%'
-        } else {
-            style.top = '18%'
-            style.right = '2%'
-        }
-
-        return style
-    }
     const getButtonStyle = () => {
         if (enableBid()) {
             return classes.panelButton
@@ -380,28 +355,36 @@ const Auction = (props) => {
                             <p>Note: Experience included in NFT is for a one time use only.</p>
                         </div>
                         <div className="main__tabs-button">
-                            <div className="tabs-elem experience">
+                            <div className={`tabs-elem ${selectedTabIndex === 0 && 'active'}`}
+                                 onClick={() => handleTabChange(0)}>
                                 <span>Experience</span>
                                 <div className="ball-wrapper">
-                                    <img className="ball" src="ball.svg" alt=""/>
+                                    <img className={selectedTabIndex === 0 ? 'ball' : 'dot'}
+                                         src={selectedTabIndex === 0 ? 'ball.svg' : 'dot.svg'} alt=""/>
                                 </div>
                             </div>
-                            <div className="tabs-elem bids">
+                            <div className={`tabs-elem ${selectedTabIndex === 1 && 'active'}`}
+                                 onClick={() => handleTabChange(1)}>
                                 <span>Bids</span>
                                 <div className="ball-wrapper">
-                                    <img className="dot" src="dot.svg" alt=""/>
+                                    <img className={selectedTabIndex === 1 ? 'ball' : 'dot'}
+                                         src={selectedTabIndex === 1 ? 'ball.svg' : 'dot.svg'} alt=""/>
                                 </div>
                             </div>
-                            <div className="tabs-elem information">
+                            <div className={`tabs-elem ${selectedTabIndex === 2 && 'active'}`}
+                                 onClick={() => handleTabChange(2)}>
                                 <span>Information</span>
                                 <div className="ball-wrapper">
-                                    <img className="dot" src="dot.svg" alt=""/>
+                                    <img className={selectedTabIndex === 2 ? 'ball' : 'dot'}
+                                         src={selectedTabIndex === 2 ? 'ball.svg' : 'dot.svg'} alt=""/>
                                 </div>
                             </div>
-                            <div className="tabs-elem history">
+                            <div className={`tabs-elem ${selectedTabIndex === 3 && 'active'}`}
+                                 onClick={() => handleTabChange(3)}>
                                 <span>History</span>
                                 <div className="ball-wrapper">
-                                    <img className="dot" src="dot.svg" alt=""/>
+                                    <img className={selectedTabIndex === 3 ? 'ball' : 'dot'}
+                                         src={selectedTabIndex === 3 ? 'ball.svg' : 'dot.svg'} alt=""/>
                                 </div>
                             </div>
                         </div>
@@ -410,22 +393,133 @@ const Auction = (props) => {
                     <div className="current-bid">
                         <div className="price">
                             <span>Current bid:</span>
-                            <img src="price.svg" alt="price"/>
+                            <span className="time-number">$ {currentBidAmount}</span>
                         </div>
-                        <button>
+                        {auth.state.isAuthenticated ? <button onClick={() => handleDialogOpen()} className="bid-button">
+                            Place a bid <img src="hammer.svg" alt="hammer"/>
+                        </button> : <button className="bid-button_disabled">
                             Sign in to bid <img src="hammer-grey.svg" alt="hammer"/>
-                        </button>
+                        </button>}
                     </div>
 
                     <div className="auction__description-container">
                         <span className="auction__description">AUCTION ENDS IN:</span>
-                        {auction && auction.live && <Countdown startDate={auction.auction_end} />}
+                        {auction && auction.live && <Countdown startDate={auction.auction_end}/>}
                     </div>
                     <div className="privacy_policy">
                         <span>Terms and Conditions</span>
                         <span>Privacy Policy</span>
                     </div>
                 </main>
+                {/*<Dialog open={dialogOpen} onClose={handleDialogClose} className={classes.dialogPaper} maxWidth="xs">*/}
+                {/*    <DialogContent className={classes.dialogContainer}>*/}
+                {dialogOpen && <div className="container-pay">
+                    <div className="pay">
+                        <button className="pay__exit" onClick={() => handleDialogClose()}>
+                            <img src="exit.svg" alt="exit"/>
+                        </button>
+                        <div className="pay__current-bid">
+                            <span className="curent-bit__title">Current bid:</span>
+                            <span className="time-number">$ {currentBidAmount}</span>
+                        </div>
+
+                        <div className="block_pay">
+                            <div className="container_input">
+                                <input type="number" placeholder="Your Bid"
+                                       value={bidAmount}
+                                       onChange={(e) => setBidAmount(e.target.value)}
+                                />
+                                <button className="bid-button" onClick={() => handlePlaceBid()} disabled={!acceptTerms}>
+                                    Place a bid <img src="hammer.svg" alt="hammer"/>
+                                </button>
+                            </div>
+                            <div className="pay__description">
+                                <p>
+                                    For security purposes increments of bid cannot be greater
+                                    <span>than $10,000</span> above current price
+                                </p>
+                                <label className="label">
+                                    <input type="checkbox" className="checkbox"
+                                           checked={acceptTerms} onChange={(e) => setAcceptTerms(e.target.checked)}/>
+                                    <span className="checkbox__fake"></span>
+                                    <span className="text"
+                                    >Agree to terms and conditions of the auction</span
+                                    >
+                                </label>
+                            </div>
+                        </div>
+
+                        <p className="other-text">by confirming your bid you agree to pay the final price SHOULD
+                            YOU
+                            BE THE WINNER. <br/>
+                            Final payment can be made in fiat vio bank transfer or in a
+                            cryptocurrency listed in our terms and conditions.</p>
+                    </div>
+                </div>}
+                {/*</DialogContent>*/}
+
+
+                {/*    <div className={classes.placeBidCurrentPriceDialog}>*/}
+                {/*        <Typography className={classes.placeBidCurrentPriceText}>Current bid:</Typography>*/}
+                {/*        <Typography variant='h5' className={classes.placeBidCurrentPriceValue}>*/}
+                {/*            <NumberFormat*/}
+                {/*                    prefix="$"*/}
+                {/*                    value={currentBidAmount}*/}
+                {/*                    displayType="text"*/}
+                {/*                    thousandSeparator={true}*/}
+                {/*            />*/}
+                {/*        </Typography>*/}
+                {/*        <div className={classes.grow} />*/}
+                {/*        <IconButton aria-label="close" className={classes.closeButton} onClick={handleDialogClose}>*/}
+                {/*            <Icon>close</Icon>*/}
+                {/*        </IconButton>*/}
+                {/*    </div>*/}
+
+                {/*    <div style={{ "marginLeft": "50px", "marginRight": "50px" }}>*/}
+                {/*        <TextField*/}
+                {/*                type="number"*/}
+                {/*                InputLabelProps={{*/}
+                {/*                    shrink: true,*/}
+                {/*                }}*/}
+                {/*                variant="outlined"*/}
+                {/*                className={classes.inputField}*/}
+                {/*                value={bidAmount}*/}
+                {/*                onChange={(e) => setBidAmount(e.target.value)}*/}
+                {/*                size="small"*/}
+                {/*                fullWidth*/}
+                {/*        />*/}
+
+                {/*    </div>*/}
+                {/*    {auction && auction.bid_max_amount &&*/}
+                {/*            <div style={{ marginBottom: "10px", marginTop: "10px" }} className={classes.placeBidInfoText}>*/}
+                {/*                For security purposes increments of bid cannot be greater <br />than <NumberFormat*/}
+                {/*                    prefix="$"*/}
+                {/*                    value={auction.bid_max_amount}*/}
+                {/*                    displayType="text"*/}
+                {/*                    thousandSeparator={true}*/}
+                {/*            /> above current price*/}
+                {/*            </div>*/}
+                {/*    }*/}
+
+                {/*    <div>*/}
+                {/*        <IconButton className={getButtonStyle2()} color="inherit" onClick={() => handlePlaceBid()} disabled={!acceptTerms}>*/}
+                {/*            <Typography className={classes.panelButtonText}>&nbsp;PLACE A BID</Typography>*/}
+                {/*        </IconButton>*/}
+                {/*    </div>*/}
+                {/*    <div style={{ "marginLeft": "50px", "marginRight": "50px" }}>*/}
+                {/*        <FormControlLabel*/}
+                {/*                control={<Checkbox checked={acceptTerms} onChange={(e) => setAcceptTerms(e.target.checked)} name="checkedA" />}*/}
+                {/*                label="Agree to terms and conditions of the auction"*/}
+                {/*                className={classes.inputCheckbox}*/}
+                {/*        />*/}
+                {/*    </div>*/}
+                {/*    <div style={{ marginTop: "10px", marginBottom: "10px" }} className={classes.placeBidInfoText}>*/}
+                {/*        by confirming your bid you agree to pay the final price SHOULD YOU BE THE WINNER*/}
+                {/*        <br />*/}
+                {/*        Final payment can be made in flat via bank transfer or in a crypto currency listed in our terms and conditions*/}
+                {/*    </div>*/}
+                {/*</DialogContent>*/}
+                {/*</Dialog>*/}
             </div>
             // <div className={classes.root} >
             //     <main className={classes.main}>
@@ -578,72 +672,8 @@ const Auction = (props) => {
             //                 </div>
             //             </div>
             //         </div>
-            //         <Dialog open={dialogOpen} onClose={handleDialogClose} className={classes.dialogPaper} maxWidth="xs">
-            //             <DialogContent className={classes.dialogContainer}>
-            //                 <div className={classes.placeBidCurrentPriceDialog}>
-            //                     <Typography className={classes.placeBidCurrentPriceText}>Current bid:</Typography>
-            //                     <Typography variant='h5' className={classes.placeBidCurrentPriceValue}>
-            //                         <NumberFormat
-            //                             prefix="$"
-            //                             value={currentBidAmount}
-            //                             displayType="text"
-            //                             thousandSeparator={true}
-            //                         />
-            //                     </Typography>
-            //                     <div className={classes.grow} />
-            //                     <IconButton aria-label="close" className={classes.closeButton} onClick={handleDialogClose}>
-            //                         <Icon>close</Icon>
-            //                     </IconButton>
-            //                 </div>
-            //
-            //                 <div style={{ "marginLeft": "50px", "marginRight": "50px" }}>
-            //                     <TextField
-            //                         type="number"
-            //                         InputLabelProps={{
-            //                             shrink: true,
-            //                         }}
-            //                         variant="outlined"
-            //                         className={classes.inputField}
-            //                         value={bidAmount}
-            //                         onChange={(e) => setBidAmount(e.target.value)}
-            //                         size="small"
-            //                         fullWidth
-            //                     />
-            //
-            //                 </div>
-            //                 {auction && auction.bid_max_amount &&
-            //                     <div style={{ marginBottom: "10px", marginTop: "10px" }} className={classes.placeBidInfoText}>
-            //                         For security purposes increments of bid cannot be greater <br />than <NumberFormat
-            //                             prefix="$"
-            //                             value={auction.bid_max_amount}
-            //                             displayType="text"
-            //                             thousandSeparator={true}
-            //                         /> above current price
-            //                     </div>
-            //                 }
-            //
-            //                 <div>
-            //                     <IconButton className={getButtonStyle2()} color="inherit" onClick={() => handlePlaceBid()} disabled={!acceptTerms}>
-            //                         <Typography className={classes.panelButtonText}>&nbsp;PLACE A BID</Typography>
-            //                     </IconButton>
-            //                 </div>
-            //                 <div style={{ "marginLeft": "50px", "marginRight": "50px" }}>
-            //                     <FormControlLabel
-            //                         control={<Checkbox checked={acceptTerms} onChange={(e) => setAcceptTerms(e.target.checked)} name="checkedA" />}
-            //                         label="Agree to terms and conditions of the auction"
-            //                         className={classes.inputCheckbox}
-            //                     />
-            //                 </div>
-            //                 <div style={{ marginTop: "10px", marginBottom: "10px" }} className={classes.placeBidInfoText}>
-            //                     by confirming your bid you agree to pay the final price SHOULD YOU BE THE WINNER
-            //                     <br />
-            //                     Final payment can be made in flat via bank transfer or in a crypto currency listed in our terms and conditions
-            //                 </div>
-            //             </DialogContent>
-            //         </Dialog>
             //     </main >
-            // </div >
     )
 }
 
-export default Auction
+export default withStyles(styles)(Auction)

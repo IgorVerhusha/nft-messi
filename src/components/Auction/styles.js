@@ -181,21 +181,21 @@ const styles = theme => ({
         },
 
     },
-    dialogPaper: {
-        "& .MuiPaper-rounded": {
-            borderRadius: "13px",
-        },
-        "& .MuiDialogContent-root:first-child": {
-            paddingTop: "5px",
-        },
-    },
-    dialogContainer: {
-        backgroundColor: "#191919",
-        border: "1px solid #fadf78",
-        // padding: "20px",
-        borderRadius: "15px",
-        textAlign: "center",
-    },
+    // dialogPaper: {
+    //     "& .MuiPaper-rounded": {
+    //         borderRadius: "13px",
+    //     },
+    //     "& .MuiDialogContent-root:first-child": {
+    //         paddingTop: "5px",
+    //     },
+    // },
+    // dialogContainer: {
+    //     backgroundColor: "#191919",
+    //     border: "1px solid #fadf78",
+    //     // padding: "20px",
+    //     borderRadius: "15px",
+    //     textAlign: "center",
+    // },
     placeBidInfoText: {
         fontSize: "0.6rem",
         color: "#cecece",

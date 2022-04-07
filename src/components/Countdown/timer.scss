@@ -13,21 +13,6 @@
       margin-right: 0;
     }
 
-    .time-number {
-      font-weight: 700;
-      font-size: 1.875vw;
-      text-align: center;
-      background: linear-gradient(
-                      180deg,
-                      #fadf78 27.72%,
-                      #f7e9ba 78.26%
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-emphasis-color: transparent;
-    }
-
     .time-text {
       display: block;
       font-weight: 400;
@@ -39,15 +24,31 @@
   }
 }
 
+.time-number {
+  font-weight: 700 !important;
+  font-size: 1.875vw !important;
+  text-align: center;
+  background: linear-gradient(
+                  180deg,
+                  #fadf78 27.72%,
+                  #f7e9ba 78.26%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-emphasis-color: transparent;
+}
+
 @media (max-width: 768px) {
+  .time-number {
+    font-size: 7.467vw !important;
+  }
   .timer {
     gap: 8vw;
     margin: 2.667vw 0 0 0;
 
     .timer-elem {
-      .time-number {
-        font-size: 7.467vw;
-      }
+
 
       .time-text {
         font-size: 12px;

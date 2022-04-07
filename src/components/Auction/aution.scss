@@ -194,10 +194,6 @@ body {
             color: #ffffff;
             height: 100%;
             font-weight: 500;
-            &:first-child {
-              color: #d8b45d;
-              font-weight: 700;
-            }
             .ball-wrapper {
               width: 1.823vw;
               .ball {
@@ -208,6 +204,10 @@ body {
                 width: 0.391vw;
               }
             }
+          }
+          .active {
+            color: #d8b45d;
+            font-weight: 700;
           }
         }
       }
@@ -229,22 +229,6 @@ body {
           }
           img {
             width: 8.906vw;
-          }
-        }
-        button {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 0.781vw;
-          width: 11.458vw;
-          height: 2.76vw;
-          border: none;
-          background: rgba(255, 255, 255, 0.3);
-          font-weight: 500;
-          font-size: 0.99vw;
-          color: rgba(255, 255, 255, 0.4);
-          img {
-            width: 1.432vw;
           }
         }
       }
@@ -331,6 +315,18 @@ body {
 @media (max-width: 1024px) {
   body {
     .auction-wrapper {
+      .container-pay {
+        .pay {
+          transform: scale(1.7);
+          .block_pay {
+            .container_input {
+              span {
+                top: 1vw;
+              }
+            }
+          }
+        }
+      }
       .main {
         .messi-nft {
           top: 50%;
@@ -370,6 +366,96 @@ body {
     height: auto;
     padding: 5.333vw 4vw 0;
     .auction-wrapper {
+      .container-pay {
+        .pay {
+          box-sizing: border-box;
+          transform: scale(1);
+          width: 92vw;
+          height: 120vw;
+          padding: 0 8vw;
+          transform: translateY(4%);
+          .pay__exit {
+            left: 50%;
+            right: auto;
+            transform: translate(-50%, -140%);
+            img {
+              width: 5.333vw;
+              height: 5.333vw;
+            }
+          }
+          .pay__current-bid {
+            height: 20.267vw;
+            align-items: center;
+            gap: 3.467vw;
+            .curent-bit__title {
+              font-size: 4vw;
+              transform: translateY(1.333vw);
+            }
+            img {
+              width: 36.267vw;
+            }
+          }
+          .block_pay {
+            flex-direction: column;
+            padding: 8vw 0 0 0;
+            gap: 4vw;
+            margin: 0 0 3.2vw 0;
+            .container_input {
+              gap: 4vw;
+              span {
+                font-size: 3.733vw;
+                top: 4vw;
+                right: 4.533vw;
+              }
+              input {
+                padding: 4.533vw;
+                width: 76vw;
+                height: 12.533vw;
+                font-size: 3.733vw;
+              }
+              button {
+                width: 76vw;
+                height: 12.533vw;
+                font-size: 4vw;
+                gap: 3.467vw;
+                img {
+                  width: 5.867vw;
+                }
+              }
+            }
+            .pay__description {
+              flex-direction: column-reverse;
+              gap: 4vw;
+              p {
+                font-size: 3.733vw;
+                line-height: 5.867vw;
+              }
+              .label {
+                gap: 2.667vw;
+                align-items: flex-start;
+                .checkbox__fake {
+                  width: 3.467vw;
+                  height: 3.467vw;
+                  transform: translateY(0.533vw);
+                  &::before {
+                    width: 2.4vw;
+                    height: 2.4vw;
+                    transform: translate(-45%, -45%);
+                  }
+                }
+                .text {
+                  font-size: 3.2vw;
+                  line-height: 4.8vw;
+                }
+              }
+            }
+          }
+          .other-text {
+            font-size: 10px;
+            line-height: 14px;
+          }
+        }
+      }
       .background {
         height: 100%;
         position: fixed;
@@ -706,6 +792,195 @@ body {
           display: none;
         }
       }
+    }
+  }
+}
+.bid-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.781vw;
+
+  width: 13.724vw;
+  height: 2.76vw;
+  background: none;
+  border: none;
+  background: #d8b45d;
+  font-weight: 500;
+  font-size: 0.99vw;
+  color: #000000;
+
+  .bid-button-disabled {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.781vw;
+    width: 11.458vw;
+    height: 2.76vw;
+    border: none;
+    background: rgba(255, 255, 255, 0.3);
+    font-weight: 500;
+    font-size: 0.99vw;
+    color: rgba(255, 255, 255, 0.4);
+    img {
+      width: 1.432vw;
+    }
+  }
+
+  &:hover {
+    background: linear-gradient(
+                    180deg,
+                    #fadf78 27.72%,
+                    #f7e9ba 78.26%
+    );
+  }
+  img {
+    width: 1.432vw;
+  }
+}
+
+.container-pay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .pay {
+    border: 0.052vw rgba(131, 116, 69, 0.34) solid;
+    position: relative;
+    padding: 0 2.344vw;
+    width: 36.458vw;
+    height: 19.01vw;
+    background-color: #161314;
+    .pay__exit {
+      border: none;
+      background: none;
+      width: min-content;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 1.172vw;
+      img {
+        width: 0.781vw;
+        height: 0.781vw;
+      }
+    }
+    .pay__current-bid {
+      padding: 0.911vw 0;
+      display: flex;
+      align-items: flex-end;
+      height: 4.349vw;
+      border-bottom: 0.026vw rgba(255, 210, 0, 1) solid;
+      gap: 0.859vw;
+      .curent-bit__title {
+        font-weight: 400;
+        font-size: 0.885vw;
+        line-height: 1.068vw;
+        color: #ffffff;
+        margin-bottom: 0.35vw;
+      }
+      img {
+        width: 8.906vw;
+      }
+    }
+    .block_pay {
+      display: flex;
+      padding: 2.344vw 0 0 0;
+      gap: 2.083vw;
+      margin: 0 0 1.823vw 0;
+      .container_input {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: min-content;
+        gap: 1.302vw;
+        span {
+          position: absolute;
+          right: 1.042vw;
+          top: 0.859vw;
+          font-size: 0.729vw;
+          color: #ffffff;
+        }
+        input {
+          width: 13.724vw;
+          height: 2.76vw;
+          background: none;
+          border: 0.026vw rgba(66, 66, 65, 1) solid;
+          font-weight: 500;
+          font-size: 0.729vw;
+          color: #ffffff;
+          padding: 0.911vw;
+          opacity: 0.4;
+        }
+      }
+      .pay__description {
+        display: flex;
+        flex-direction: column;
+        font-weight: 400;
+        font-size: 0.677vw;
+        line-height: 1.042vw;
+        gap: 2.161vw;
+        p {
+          font-size: 0.677vw;
+          line-height: 1.042vw;
+          color: #ffffff;
+          span {
+            color: #d8b45d;
+          }
+        }
+
+        .label {
+          display: flex;
+          gap: 0.547vw;
+          align-items: center;
+          .checkbox {
+            display: none;
+            &:checked + .checkbox__fake::before {
+              opacity: 1;
+            }
+          }
+          .text {
+            font-weight: 400;
+            font-size: 0.625vw;
+            color: #ffffff;
+          }
+          .checkbox__fake {
+            display: flex;
+            display: block;
+            width: 0.625vw;
+            height: 0.625vw;
+            border: 0.026vw #d8b45d solid;
+            position: relative;
+            &::before {
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              display: block;
+              content: "";
+              width: 0.417vw;
+              height: 0.417vw;
+              background-color: #d8b45d;
+              opacity: 0;
+              transition: 0.2s;
+            }
+          }
+        }
+      }
+    }
+    .other-text {
+      font-weight: 400;
+      font-size: 0.521vw;
+      line-height: 0.833vw;
+      color: #ffffff;
+      opacity: 0.5;
+      margin: 0;
     }
   }
 }
