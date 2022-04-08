@@ -865,11 +865,30 @@ body {
             width: max-content;
             z-index: 1;
 
+
+
             .auction__tabs-information {
               font-weight: 400;
               font-size: 3.733vw;
               line-height: 5.867vw;
-
+              .nft-chain {
+                gap: 5.333vw;
+                align-items: center;
+                span {
+                  font-size: 4vw;
+                }
+                img {
+                  width: 7.733vw;
+                  margin: 0;
+                }
+              }
+              button {
+                margin: 5.333vw 0 0 0;
+                width: 50.133vw;
+                height: 10.133vw;
+                font-size: 3.733vw;
+                border: 0.267vw rgba(216, 180, 93, 1) solid;
+              }
               .line-text-break {
                 margin: 0.859vw 0 0 0;
               }

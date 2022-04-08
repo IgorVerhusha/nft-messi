@@ -105,6 +105,7 @@ const Register = (props) => {
                         type: 'PROFILE',
                         payload: profile
                     })
+                    history.push('/')
                 })
                 .catch(function (error) {
                     console.log(error.response)
