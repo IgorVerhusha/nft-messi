@@ -334,7 +334,7 @@ const Auction = (props) => {
                     </div>
 
                     <div className="auction__tabs">
-                        <div className="auction__tabs-description">
+                        {selectedTabIndex === 0 && <div className="auction__tabs-description">
                             <ul>
                                 Money Can't Buy Experience with Lionel Messi:
                                 <li>
@@ -353,10 +353,45 @@ const Auction = (props) => {
                                 </li>
                             </ul>
                             <p>Note: Experience included in NFT is for a one time use only.</p>
-                        </div>
+                        </div>}
+                        {selectedTabIndex === 1 && <div className="auction__tabs-description">
+                            {bids?.length ? bids.map((row, index) => (
+                                    <div className="bits-elem" key={index}>
+                                        <span className="bits-name">{row.username} -</span>
+                                        <span className="bits-date">&nbsp;{epochToJsDate(row.created_at)}</span>
+                                        <span className="bits-rate">${row.bid_amount}</span>
+                                    </div>
+                            )) : 'No bids to display'}
+                        </div>}
+                        {selectedTabIndex === 2 && <div className="auction__tabs-description">
+                            <div className="auction__tabs-information">
+                                Digital Collectibles, known as NFTs (Non-Fungible Tokens),
+                                are one-of-a-kind items with digital certificates of authenticity.
+                                Buying and owning a digital collectible means you have a certificate of ownership.
+                                Your authentic, verifiable digital collectibles are stored on the Blockchain,
+                                a secure and transparent digital ledger.
+                                <div className="line-text-break"/>
+                                This 1 of 1 NFT is your chance to own a piece of history.
+                                Ballon D’Or 2021 is Lionel Messi’s 6th time winning the award. He has won the Ballon
+                                d’Or more times than any other player. This is the first NFT ever featuring Ballon
+                                d’Or and the first NFT of Messi as a part of the PSG club.
+                            </div>
+                        </div>}
+                        {selectedTabIndex === 3 && <div className="auction__tabs-description">
+                            <div className="auction__tabs-information">
+                                <div className="nft-chain">
+                                    <span>NFT Chain:</span>
+                                    <img src="coin.svg" alt="coin"/>
+                                </div>
+                                <button>View current address</button>
+                            </div>
+                        </div>}
                         <div className="main__tabs-button">
                             <div className={`tabs-elem ${selectedTabIndex === 0 && 'active'}`}
                                  onClick={() => handleTabChange(0)}>
+                                <span className="mini-dot"></span>
+                                <span className="mini-dot"></span>
+                                <span className="mini-dot"></span>
                                 <span>Experience</span>
                                 <div className="ball-wrapper">
                                     <img className={selectedTabIndex === 0 ? 'ball' : 'dot'}
@@ -365,6 +400,9 @@ const Auction = (props) => {
                             </div>
                             <div className={`tabs-elem ${selectedTabIndex === 1 && 'active'}`}
                                  onClick={() => handleTabChange(1)}>
+                                <span className="mini-dot"></span>
+                                <span className="mini-dot"></span>
+                                <span className="mini-dot"></span>
                                 <span>Bids</span>
                                 <div className="ball-wrapper">
                                     <img className={selectedTabIndex === 1 ? 'ball' : 'dot'}
@@ -373,6 +411,9 @@ const Auction = (props) => {
                             </div>
                             <div className={`tabs-elem ${selectedTabIndex === 2 && 'active'}`}
                                  onClick={() => handleTabChange(2)}>
+                                <span className="mini-dot"></span>
+                                <span className="mini-dot"></span>
+                                <span className="mini-dot"></span>
                                 <span>Information</span>
                                 <div className="ball-wrapper">
                                     <img className={selectedTabIndex === 2 ? 'ball' : 'dot'}
@@ -397,7 +438,7 @@ const Auction = (props) => {
                         </div>
                         {auth.state.isAuthenticated ? <button onClick={() => handleDialogOpen()} className="bid-button">
                             Place a bid <img src="hammer.svg" alt="hammer"/>
-                        </button> : <button className="bid-button_disabled">
+                        </button> : <button className="bid-button-gray" onClick={() => history.push('/loginpanel')}>
                             Sign in to bid <img src="hammer-grey.svg" alt="hammer"/>
                         </button>}
                     </div>

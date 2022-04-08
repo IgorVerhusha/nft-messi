@@ -62,6 +62,7 @@ const Header = (props) => {
     }
     return (
             <header className="header">
+                {/*{notifications.state.message && <div>dasfasf</div>}*/}
                 <Link to="/" className="header__left-block">
                     <img src="/paris_golden_city.svg" alt="paris_golden_city"/>
                     <img src="/psg.svg" alt="psg"/>
@@ -279,24 +280,7 @@ const Header = (props) => {
     }
     {/*>*/
     }
-    {/*    <Alert*/
-    }
-    {/*        onClose={closeNotificationAlert}*/
-    }
-    {/*        severity={notifications.state.severity}*/
-    }
-    {/*    >*/
-    }
-    {/*        <AlertTitle>*/
-    }
-    {/*            {errorTitles[notifications.state.severity]}*/
-    }
-    {/*        </AlertTitle>*/
-    }
-    {/*        {notifications.state.message}*/
-    }
-    {/*    </Alert>*/
-    }
+
     {/*</Collapse>*/
     }
 }

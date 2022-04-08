@@ -1,6 +1,6 @@
 body {
   overflow-x: hidden !important;
-  padding: 3.125vw 3.646vw;
+  padding: 3.125vw 3.646vw 0;
   position: relative;
   height: 100vh;
   .content-wrapper {
@@ -11,7 +11,7 @@ body {
       display: none;
     }
 
-    .background {
+    .background-content {
       position: absolute;
       top: 0;
       left: 0;
@@ -52,7 +52,7 @@ body {
 
 @media (max-width: 768px) {
   body {
-    padding: 5.333vw 4vw;
+    padding: 5.333vw 4vw 0;
     overflow: auto;
   }
 }

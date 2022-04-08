@@ -1,0 +1,240 @@
+.register__form {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  gap: 0.781vw;
+  align-items: center;
+
+  .main__form-title {
+    font-weight: 700;
+    font-size: 2.396vw;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, #fadf78 27.72%, #f7e9ba 78.26%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-emphasis-color: transparent;
+    margin: 0 0 0.911vw 0;
+  }
+
+  .label {
+    display: flex;
+    gap: 0.547vw;
+    align-items: center;
+
+    .checkbox {
+      display: none;
+
+      &:checked + .checkbox__fake::before {
+        opacity: 1;
+      }
+    }
+
+    .text {
+      font-weight: 400;
+      font-size: 0.625vw;
+      color: #ffffff;
+    }
+
+    .checkbox__fake {
+      display: flex;
+      display: block;
+      width: 0.625vw;
+      height: 0.625vw;
+      border: 0.026vw #d8b45d solid;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        content: "";
+        width: 0.417vw;
+        height: 0.417vw;
+        background-color: #d8b45d;
+        opacity: 0;
+        transition: 0.2s;
+      }
+    }
+  }
+
+  input {
+    width: 23.438vw;
+    height: 2.76vw;
+    background: none;
+    border: 0.052vw solid #424241;
+    padding: 0 0.911vw 0 2.292vw;
+    line-height: 0.885vw;
+    color: rgba(255, 255, 255, 0.4);
+    background-image: url(../../../assets/img/mail-img.svg);
+    background-repeat: no-repeat;
+    background-size: 0.677vw auto;
+    background-position: 0.964vw center;
+    font-weight: 500;
+    font-size: 0.729vw;
+
+    &:nth-child(3) {
+      background-image: url(../../../assets/img/mail-img.svg);
+      background-size: 0.781vw auto;
+    }
+
+    &:nth-child(4) {
+      background-image: url(../../../assets/img/key-img.svg);
+      background-size: 0.781vw auto;
+    }
+
+    &:nth-child(5) {
+      background-image: url(../../../assets/img/key-img.svg);
+      background-size: 0.781vw auto;
+    }
+  }
+
+  label {
+    margin: 0.599vw 0 0 0;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 0.625vw;
+    color: #ffffff;
+    gap: 0.391vw;
+
+    input {
+      width: 0.625vw;
+      height: 0.625vw;
+    }
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.781vw;
+    width: 11.042vw;
+    height: 2.76vw;
+    font-size: 0.99vw;
+    font-weight: 500;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    color: #d8b45d;
+
+    &:nth-child(7) {
+      color: #000000;
+      background: #fadf78;
+      text-decoration: none;
+      margin: 0.599vw 0 0 0;
+
+      &:hover {
+        background: linear-gradient(
+                        180deg,
+                        #fadf78 27.72%,
+                        #f7e9ba 78.26%
+        );
+      }
+    }
+
+    img {
+      width: auto;
+      height: 0.599vw;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .register__form {
+    gap: 5.333vw;
+    transform: translate(-50%, -44%);
+    gap: 4vw;
+
+    .main__form-title {
+      font-size: 7.467vw;
+      transform: translateY(-50%);
+    }
+
+    input {
+      width: 92vw;
+      height: 12.267vw;
+      padding: 0 4vw 0 10.667vw;
+      background-size: 3.733vw auto;
+      font-size: 3.733vw;
+      background-position: 4vw center;
+
+      &:nth-child(3) {
+        background-size: 4vw auto;
+      }
+
+      &:nth-child(4) {
+        background-size: 4vw auto;
+      }
+
+      &:nth-child(5) {
+        background-size: 4vw auto;
+      }
+    }
+
+    label {
+      font-size: 3.2vw;
+      gap: 2.133vw;
+      margin: 2.667vw 0 0 0;
+
+      input {
+        width: 3.467vw;
+        height: 3.467vw;
+      }
+
+
+    }
+    .label {
+      gap: 2.667vw;
+      align-items: flex-start;
+
+      .checkbox__fake {
+        width: 3.467vw;
+        height: 3.467vw;
+        transform: translateY(0.533vw);
+
+        &::before {
+          width: 2.4vw;
+          height: 2.4vw;
+          transform: translate(-45%, -45%);
+        }
+      }
+
+      .text {
+        font-size: 3.2vw;
+        line-height: 4.8vw;
+      }
+    }
+    button {
+      width: 53.333vw;
+      height: 12.267vw;
+      font-size: 4vw;
+      gap: 3.2vw;
+      margin: 4vw 0 0 0;
+
+      img {
+        width: auto;
+        height: 2.667vw;
+      }
+    }
+  }
+  .main__back {
+    font-size: 4.267vw;
+    gap: 3.733vw;
+    top: 94%;
+
+    img {
+      width: auto;
+      height: 2.933vw;
+    }
+
+
+  }
+
+}
+

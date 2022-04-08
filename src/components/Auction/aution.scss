@@ -3,6 +3,7 @@
   font-family: "Montserrat";
   font-style: normal;
 }
+
 html {
   overflow-x: hidden;
 }
@@ -14,12 +15,15 @@ body {
   height: 100vh;
   background: #000000;
   overflow-x: hidden;
+
   .auction-wrapper {
     width: 100%;
     height: 100%;
+
     .menu-mobile {
       display: none;
     }
+
     .background {
       position: absolute;
       top: 0;
@@ -28,31 +32,39 @@ body {
       width: 100%;
       height: 100%;
     }
+
     .header {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       .header__burger {
         display: none;
       }
+
       .header__left-block {
         z-index: 1;
+
         img:nth-child(1) {
           width: 8.333vw;
           margin-right: 3.203vw;
         }
+
         img:nth-child(2) {
           width: 3.307vw;
           margin-right: 2.422vw;
         }
+
         img:nth-child(3) {
           width: 6.25vw;
         }
       }
+
       .header__right-block {
         z-index: 1;
         display: flex;
+
         button {
           width: 7.917vw;
           height: 2.604vw;
@@ -62,19 +74,24 @@ body {
           font-size: 0.99vw;
           color: #ffffff;
           transition: 0.2s;
+          cursor: pointer;
+
           &:first-child:hover {
             color: rgba(216, 180, 93, 1);
           }
+
           &:last-child {
             display: flex;
             justify-content: center;
             align-items: center;
             background: rgba(216, 180, 93, 1);
             color: #000000;
+
             img {
               width: 1.25vw;
               margin: 0 0 0 0.781vw;
             }
+
             &:hover {
               background: linear-gradient(
                               180deg,
@@ -86,6 +103,7 @@ body {
         }
       }
     }
+
     .main {
       .messi-nft {
         position: absolute;
@@ -93,14 +111,17 @@ body {
         width: 75.531vw;
         top: 5vh;
       }
+
       .auction__title {
         position: absolute;
         top: 7vw;
         left: 56.234vw;
         text-align: center;
+
         img {
           width: 8.6vw;
         }
+
         h1 {
           margin: 1.901vw 0 0 0;
           font-weight: 700;
@@ -113,6 +134,7 @@ body {
           background-clip: text;
           text-emphasis-color: transparent;
         }
+
         p {
           font-weight: 700;
           font-size: 1.042vw;
@@ -123,6 +145,7 @@ body {
           background-clip: text;
           text-emphasis-color: transparent;
         }
+
         span {
           margin: 2.552vw auto 0;
           display: block;
@@ -139,7 +162,85 @@ body {
         top: 21.479vw;
         gap: 5.99vw;
         height: 13.5vw;
+
         .auction__tabs-description {
+          width: 28.021vw;
+          padding: 0 1.042vw 0 0;
+          overflow: auto;
+          &::-webkit-scrollbar {
+            width: 0.26vw;
+          }
+          &::-webkit-scrollbar-track {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+          &::-webkit-scrollbar-thumb {
+            box-shadow: inset 0 0 6px rgb(255, 255, 255);
+          }
+          .bits-elem {
+            font-weight: 400;
+            font-size: 0.677vw;
+            color: #ffffff;
+            height: 1.901vw;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            border-bottom: 0.026vw #424241 solid;
+            .bits-rate {
+              font-weight: 600;
+              font-size: 0.677vw;
+              margin: 0 0 0 auto;
+              background: linear-gradient(
+                              180deg,
+                              #fadf78 27.72%,
+                              #f7e9ba 78.26%
+              );
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+              text-emphasis-color: transparent;
+            }
+          }
+
+          .auction__tabs-information {
+            font-weight: 400;
+            font-size: 0.677vw;
+            line-height: 1.094vw;
+
+            .nft-chain {
+              display: flex;
+              gap: 2.005vw;
+              span {
+                margin: 1.068vw 0 0 0;
+                font-weight: 400;
+                font-size: 0.885vw;
+                color: #ffffff;
+              }
+              img {
+                width: 1.901vw;
+              }
+            }
+
+            button {
+              margin: 2.083vw 0 0 0;
+              width: 10.417vw;
+              height: 2.083vw;
+              border: 0.052vw solid #d8b45d;
+              background: none;
+              font-weight: 500;
+              font-size: 0.729vw;
+              text-align: center;
+              color: #ffffff;
+              &:hover {
+                background: #d8b45d;
+                color: #000000;
+              }
+            }
+
+            .line-text-break {
+              margin: 0.859vw 0 0 0;
+            }
+          }
+
           ul {
             font-weight: 700;
             font-size: 0.885vw;
@@ -154,14 +255,17 @@ body {
               line-height: 1.094vw;
               color: #ffffff;
               margin: 0.521vw 0 0 0;
+
               &:first-child {
                 margin: 1.354vw 0 0 0;
               }
+
               &:nth-child(2) {
                 div {
                   margin-bottom: 1.042vw;
                 }
               }
+
               div {
                 width: 0.208vw;
                 height: 0.208vw;
@@ -171,6 +275,7 @@ body {
               }
             }
           }
+
           p {
             margin: 1.302vw 0 0 0;
             font-weight: 400;
@@ -185,7 +290,10 @@ body {
           display: flex;
           flex-direction: column;
           align-items: flex-end;
+          cursor: pointer;
+
           .tabs-elem {
+            position: relative;
             display: flex;
             align-items: flex-start;
             font-size: 0.729vw;
@@ -194,23 +302,51 @@ body {
             color: #ffffff;
             height: 100%;
             font-weight: 500;
+
+            .mini-dot {
+              width: 0.15vw;
+              height: 0.15vw;
+              background: #ffffff;
+              border-radius: 100%;
+              position: absolute;
+              right: 0.15vw;
+
+              &:nth-child(1) {
+                top: 40%;
+              }
+
+              &:nth-child(2) {
+                top: 60%;
+              }
+
+              &:nth-child(3) {
+                top: 80%;
+              }
+            }
+
             .ball-wrapper {
               width: 1.823vw;
+
               .ball {
                 transform: translateX(25%);
                 width: 1.172vw;
               }
+
               .dot {
                 width: 0.391vw;
               }
             }
           }
+
+
+
           .active {
             color: #d8b45d;
             font-weight: 700;
           }
         }
       }
+
       .current-bid {
         position: absolute;
         left: 56.234vw;
@@ -218,15 +354,18 @@ body {
         display: flex;
         flex-direction: column;
         gap: 1.302vw;
+
         .price {
           display: flex;
           align-items: center;
           gap: 0.859vw;
+
           span {
             font-weight: 400;
             font-size: 0.885vw;
             color: #ffffff;
           }
+
           img {
             width: 8.906vw;
           }
@@ -248,20 +387,24 @@ body {
         background-position: center;
         justify-content: center;
         gap: 2.161vw;
+
         .main__description {
           display: block;
           font-weight: 500;
           font-size: 0.938vw;
           color: #ffffff;
         }
+
         .timer {
           display: flex;
           justify-content: center;
           gap: 2.083vw;
+
           .timer-elem {
             display: flex;
             flex-direction: column;
             justify-content: center;
+
             .time-number {
               font-weight: 700;
               font-size: 1.771vw;
@@ -277,6 +420,7 @@ body {
               background-clip: text;
               text-emphasis-color: transparent;
             }
+
             .time-text {
               display: block;
               font-weight: 400;
@@ -287,12 +431,14 @@ body {
           }
         }
       }
+
       .privacy_policy {
         position: absolute;
         bottom: 2.031vw;
         right: 3.646vw;
         display: flex;
         gap: 2.083vw;
+
         span {
           font-weight: 700;
           font-size: 0.677vw;
@@ -318,6 +464,7 @@ body {
       .container-pay {
         .pay {
           transform: scale(1.7);
+
           .block_pay {
             .container_input {
               span {
@@ -327,18 +474,22 @@ body {
           }
         }
       }
+
       .main {
         .messi-nft {
           top: 50%;
           transform: translateY(-70%);
         }
+
         .auction__title {
           top: 30%;
           transform: translateY(-85%);
         }
+
         .auction__tabs {
           top: 37%;
         }
+
         .current-bid {
           bottom: 17vw;
         }
@@ -346,10 +497,12 @@ body {
     }
   }
 }
+
 @media (min-aspect-ratio: 512/295) and (max-width: 1024px) {
   body {
     overflow: auto;
     height: 58vw;
+
     .auction-wrapper {
       .main {
         .messi-nft {
@@ -365,6 +518,7 @@ body {
   body {
     height: auto;
     padding: 5.333vw 4vw 0;
+
     .auction-wrapper {
       .container-pay {
         .pay {
@@ -374,75 +528,93 @@ body {
           height: 120vw;
           padding: 0 8vw;
           transform: translateY(4%);
+
           .pay__exit {
             left: 50%;
             right: auto;
             transform: translate(-50%, -140%);
+
             img {
               width: 5.333vw;
               height: 5.333vw;
             }
           }
+
           .pay__current-bid {
             height: 20.267vw;
             align-items: center;
             gap: 3.467vw;
+
             .curent-bit__title {
               font-size: 4vw;
               transform: translateY(1.333vw);
             }
+
             img {
               width: 36.267vw;
             }
           }
+
           .block_pay {
             flex-direction: column;
             padding: 8vw 0 0 0;
             gap: 4vw;
             margin: 0 0 3.2vw 0;
+
             .container_input {
               gap: 4vw;
+
               span {
                 font-size: 3.733vw;
                 top: 4vw;
                 right: 4.533vw;
               }
+
               input {
                 padding: 4.533vw;
                 width: 76vw;
                 height: 12.533vw;
                 font-size: 3.733vw;
               }
+
               button {
                 width: 76vw;
                 height: 12.533vw;
                 font-size: 4vw;
                 gap: 3.467vw;
+                cursor: pointer;
+
                 img {
                   width: 5.867vw;
                 }
               }
             }
+
             .pay__description {
               flex-direction: column-reverse;
               gap: 4vw;
+
               p {
                 font-size: 3.733vw;
                 line-height: 5.867vw;
               }
+
               .label {
                 gap: 2.667vw;
                 align-items: flex-start;
+
                 .checkbox__fake {
                   width: 3.467vw;
                   height: 3.467vw;
                   transform: translateY(0.533vw);
+
                   &::before {
                     width: 2.4vw;
                     height: 2.4vw;
                     transform: translate(-45%, -45%);
                   }
                 }
+
                 .text {
                   font-size: 3.2vw;
                   line-height: 4.8vw;
@@ -450,22 +622,26 @@ body {
               }
             }
           }
+
           .other-text {
             font-size: 10px;
             line-height: 14px;
           }
         }
       }
+
       .background {
         height: 100%;
         position: fixed;
         transform: translate(-45%);
         width: 332vw;
       }
+
       .menu-mobile {
         &.active {
           display: flex;
         }
+
         position: fixed;
         right: 0;
         top: 0;
@@ -476,6 +652,7 @@ body {
         padding: 4vw 4vw 8vw;
         flex-direction: column;
         align-items: center;
+
         .policy {
           margin: auto auto 0;
           color: #ffffff;
@@ -486,6 +663,7 @@ body {
           align-items: center;
           gap: 5.333vw;
         }
+
         .header__burger {
           width: 10.133vw;
           height: 10.133vw;
@@ -498,30 +676,38 @@ body {
           gap: 1.333vw;
           background: none;
           transition: 0.2s;
+
           &:hover {
             background: rgba(216, 180, 93, 1);
+
             span {
               background: #000000;
             }
           }
+
           span {
             position: absolute;
             display: block;
             width: 5.867vw;
             height: 0.533vw;
             background: #ffffff;
+
             &:last-child {
               transform: rotate(45deg);
             }
+
             &:first-child {
               transform: rotate(-45deg);
             }
           }
         }
+
         .menu__button {
           width: 100%;
           display: flex;
           flex-direction: column;
+          cursor: pointer;
+
           button {
             width: 100%;
             height: 12.267vw;
@@ -533,9 +719,12 @@ body {
             font-size: 4vw;
             color: #ffffff;
             transition: 0.2s;
+            cursor: pointer;
+
             &:hover {
               color: rgba(216, 180, 93, 1);
             }
+
             &:nth-child(1) {
               margin: 6.133vw 0 0 0;
               border: none;
@@ -544,10 +733,12 @@ body {
               align-items: center;
               background: rgba(216, 180, 93, 1);
               color: #000000;
+
               img {
                 width: 5.333vw;
                 margin: 0 0 0 3.2vw;
               }
+
               &:hover {
                 background: linear-gradient(
                                 180deg,
@@ -556,21 +747,25 @@ body {
                 );
               }
             }
+
             &:nth-child(2) {
               margin: 4vw 0 0 0;
               border-bottom: none;
             }
           }
         }
+
         .warning-solid {
           margin: 10.667vw 0 0 0;
           width: 100%;
           display: flex;
           flex-direction: column;
           align-items: center;
+
           img {
             width: 4.533vw;
           }
+
           span {
             margin: 1.333vw 0 0 0;
             font-weight: 400;
@@ -579,23 +774,28 @@ body {
           }
         }
       }
+
       .header {
         .header__left-block {
           img:nth-child(1) {
             width: 24vw;
             margin: 0 6.667vw 0 0;
           }
+
           img:nth-child(2) {
             width: 10.667vw;
             margin: 0 4.8vw 0 0;
           }
+
           img:nth-child(3) {
             width: 19.733vw;
           }
         }
+
         .header__right-block {
           display: none;
         }
+
         .header__burger {
           z-index: 1;
           display: block;
@@ -610,12 +810,15 @@ body {
           gap: 1.333vw;
           background: none;
           transition: 0.2s;
+
           &:hover {
             background: rgba(216, 180, 93, 1);
+
             span {
               background: #000000;
             }
           }
+
           span {
             display: block;
             width: 5.867vw;
@@ -624,6 +827,7 @@ body {
           }
         }
       }
+
       .main {
         .messi-nft {
           width: 184.533vw;
@@ -631,59 +835,82 @@ body {
           transform: translateX(-39%);
           top: 55.733vw;
         }
+
         .auction__title {
           width: 100%;
           top: 32.8vw;
           left: 50%;
           transform: translateX(-50%);
+
           img {
             display: block;
             width: 35.733vw;
             margin: 0 auto;
           }
+
           h1 {
             font-weight: 700;
             font-size: 8.533vw;
             line-height: 10.4vw;
             margin: 6.901vw 0 0 0;
           }
+
           p {
             margin: 1.5vw 0 0 0;
             font-size: 4vw;
             line-height: 4.8vw;
           }
+
           span {
             width: 14.4vw;
             margin: 7.5vw auto 0;
           }
         }
+
         .auction__tabs {
           position: static;
-          margin: 230vw auto 0;
+          margin: 140vw auto 0;
+          height: auto;
           transform: none;
           z-index: 1;
           flex-direction: column-reverse;
           gap: 9vw;
+
           .auction__tabs-description {
             max-width: 92vw;
             width: max-content;
             z-index: 1;
+
+            .auction__tabs-information {
+              font-weight: 400;
+              font-size: 3.733vw;
+              line-height: 5.867vw;
+
+              .line-text-break {
+                margin: 0.859vw 0 0 0;
+              }
+            }
+
             ul {
               font-size: 4.267vw;
               line-height: 6.4vw;
+
               li {
                 width: 92vw;
                 font-size: 3.733vw;
                 line-height: 5.867vw;
                 margin: 2.667vw 0 0 0;
+
                 &:first-child {
                   margin: 5.354vw 0 0 0;
                 }
+
                 &:nth-child(2) {
                   div {
                     margin-bottom: 17vw;
                   }
                 }
+
                 &:last-child {
                   div {
                     margin-bottom: 5vw;
@@ -698,29 +925,40 @@ body {
                 }
               }
             }
+
             p {
               font-size: 3.2vw;
               line-height: 4.8vw;
               margin: 5.333vw 0 0 0;
             }
           }
+
           .main__tabs-button {
             z-index: 1;
             flex-direction: row;
             justify-content: space-between;
+            cursor: pointer;
+
             .tabs-elem {
               align-items: center;
               font-size: 4vw;
               line-height: 4.8vw;
               width: min-content;
               flex-direction: column;
+
+              .mini-dot {
+                display: none;
+              }
+
               span {
                 margin: 0 0 1.333vw 0;
               }
+
               .ball-wrapper {
                 .dot {
                   width: 1.6vw;
                 }
+
                 .ball {
                   transform: none;
                   width: 5.333vw;
@@ -729,6 +967,7 @@ body {
             }
           }
         }
+
         .current-bid {
           margin: 8vw 0 0 0;
           position: static;
@@ -738,14 +977,17 @@ body {
           .price {
             z-index: 1;
             gap: 3.5vw;
+
             span {
               font-size: 4vw;
               margin: 2.667vw 0 0 0;
             }
+
             img {
               width: 36.267vw;
             }
           }
+
           button {
             z-index: 1;
             border: none;
@@ -753,12 +995,15 @@ body {
             height: 12.267vw;
             font-size: 4vw;
             gap: 3.467vw;
+            cursor: pointer;
             img {
               width: 5.867vw;
             }
           }
         }
+
         .auction__description-container {
+          bottom: 0;
           position: relative;
           left: 50%;
           transform: none;
@@ -773,21 +1018,26 @@ body {
           .auction__description {
             font-size: 3.733vw;
           }
+
           .timer {
             gap: 8vw;
             margin: 2.667vw 0 0 0;
             margin: 0;
+
             .timer-elem {
               gap: 1.333vw;
+
               .time-number {
                 font-size: 6.4vw;
               }
+
               .time-text {
                 font-size: 3.2vw;
               }
             }
           }
         }
+
         .privacy_policy {
           display: none;
         }
@@ -795,12 +1045,31 @@ body {
     }
   }
 }
+
+.bid-button-gray {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.781vw;
+  width: 11.458vw;
+  height: 2.76vw;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  font-weight: 500;
+  font-size: 0.99vw;
+  color: rgba(255, 255, 255, 0.4);
+
+  img {
+    width: 1.432vw;
+  }
+}
+
 .bid-button {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.781vw;
-
+  cursor: pointer;
   width: 13.724vw;
   height: 2.76vw;
   background: none;
@@ -810,23 +1079,6 @@ body {
   font-size: 0.99vw;
   color: #000000;
 
-  .bid-button-disabled {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.781vw;
-    width: 11.458vw;
-    height: 2.76vw;
-    border: none;
-    background: rgba(255, 255, 255, 0.3);
-    font-weight: 500;
-    font-size: 0.99vw;
-    color: rgba(255, 255, 255, 0.4);
-    img {
-      width: 1.432vw;
-    }
-  }
-
   &:hover {
     background: linear-gradient(
                     180deg,
@@ -834,6 +1086,7 @@ body {
                     #f7e9ba 78.26%
     );
   }
+
   img {
     width: 1.432vw;
   }
@@ -851,6 +1104,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
   .pay {
     border: 0.052vw rgba(131, 116, 69, 0.34) solid;
     position: relative;
@@ -858,6 +1112,7 @@ body {
     width: 36.458vw;
     height: 19.01vw;
     background-color: #161314;
+
     .pay__exit {
       border: none;
       background: none;
@@ -866,11 +1121,13 @@ body {
       right: 0;
       top: 0;
       padding: 1.172vw;
+
       img {
         width: 0.781vw;
         height: 0.781vw;
       }
     }
+
     .pay__current-bid {
       padding: 0.911vw 0;
       display: flex;
@@ -878,6 +1135,7 @@ body {
       height: 4.349vw;
       border-bottom: 0.026vw rgba(255, 210, 0, 1) solid;
       gap: 0.859vw;
+
       .curent-bit__title {
         font-weight: 400;
         font-size: 0.885vw;
@@ -885,21 +1143,25 @@ body {
         color: #ffffff;
         margin-bottom: 0.35vw;
       }
+
       img {
         width: 8.906vw;
       }
     }
+
     .block_pay {
       display: flex;
       padding: 2.344vw 0 0 0;
       gap: 2.083vw;
       margin: 0 0 1.823vw 0;
+
       .container_input {
         display: flex;
         flex-direction: column;
         position: relative;
         width: min-content;
         gap: 1.302vw;
+
         span {
           position: absolute;
           right: 1.042vw;
@@ -907,6 +1169,7 @@ body {
           font-size: 0.729vw;
           color: #ffffff;
         }
+
         input {
           width: 13.724vw;
           height: 2.76vw;
@@ -919,6 +1182,7 @@ body {
           opacity: 0.4;
         }
       }
+
       .pay__description {
         display: flex;
         flex-direction: column;
@@ -926,10 +1190,12 @@ body {
         font-size: 0.677vw;
         line-height: 1.042vw;
         gap: 2.161vw;
+
         p {
           font-size: 0.677vw;
           line-height: 1.042vw;
           color: #ffffff;
+
           span {
             color: #d8b45d;
           }
@@ -939,17 +1205,21 @@ body {
           display: flex;
           gap: 0.547vw;
           align-items: center;
+
           .checkbox {
             display: none;
+
             &:checked + .checkbox__fake::before {
               opacity: 1;
             }
           }
+
           .text {
             font-weight: 400;
             font-size: 0.625vw;
             color: #ffffff;
           }
+
           .checkbox__fake {
             display: flex;
             display: block;
@@ -957,6 +1227,7 @@ body {
             height: 0.625vw;
             border: 0.026vw #d8b45d solid;
             position: relative;
+
             &::before {
               position: absolute;
               left: 50%;
@@ -974,6 +1245,7 @@ body {
         }
       }
     }
+
     .other-text {
       font-weight: 400;
       font-size: 0.521vw;

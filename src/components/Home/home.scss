@@ -51,6 +51,7 @@
     color: #000000;
     -webkit-transition: 0.2s;
     transition: 0.2s;
+    cursor: pointer;
     &:hover {
       background: linear-gradient(180deg, #fadf78 27.72%, #f7e9ba 78.26%);
     }
@@ -122,6 +123,7 @@
       width: 34.667vw;
       height: 12.267vw;
       font-size: 4vw;
+      cursor: pointer;
     }
   }
 }
