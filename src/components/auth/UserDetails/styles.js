@@ -50,12 +50,9 @@ const styles = theme => ({
         display: "flex",
     },
     inputField: {
-        backgroundColor: "black",
         border: "2px solid #f3efde",
-        borderRadius: "30px",
         marginBottom: "30px",
         // marginRight: "20px",
-        color: "#f3efde",
         "& .MuiOutlinedInput-input": {
             marginLeft: 0,
             padding: "14px 14px",
@@ -74,10 +71,10 @@ const styles = theme => ({
         //     padding: "14px 14px",
         // },
         "& .MuiOutlinedInput-root": {
-            border: "2px solid #f3efde",
-            backgroundColor: "black",
-            borderRadius: "30px",
+            border: "0.052vw solid #424241",
+            borderRadius: '0',
             color: "#f3efde",
+            background: 'none',
         },
     },
     inputCheckbox: {

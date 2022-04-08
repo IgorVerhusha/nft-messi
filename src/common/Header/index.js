@@ -62,16 +62,33 @@ const Header = (props) => {
     }
     return (
             <header className="header">
-                {/*{notifications.state.message && <div>dasfasf</div>}*/}
+                {notifications.state.message && <div className="error">
+                    <button onClick={closeNotificationAlert}>
+                        <img src="exit.svg" alt=""/>
+                    </button>
+                    <span>{notifications.state.message}</span>
+                </div>}
                 <Link to="/" className="header__left-block">
                     <img src="/paris_golden_city.svg" alt="paris_golden_city"/>
                     <img src="/psg.svg" alt="psg"/>
                     <img src="/leo_messi.svg" alt="leo_messi"/>
                 </Link>
-                <div className="header__right-block">
-                    <button onClick={() => history.push('/contact')}>Contact</button>
-                    <button onClick={() => history.push('/loginpanel')}>Sign in<img src="./arrow_input.svg"/></button>
-                </div>
+                {auth.state.isAuthenticated && auth.state.account_type === 'user' ?
+                        <div className="header__right-block-sign">
+                            {!auth.state.identity_verified &&
+                                    <div className="verify" onClick={() => history.push('/verifyidentity')}>
+                                        <img src="warning-yellow.svg" alt=""/>
+                                        <span>not verified</span></div>}
+                            <button onClick={() => history.push('/bidhistory')}>Bid History</button>
+                            <button onClick={() => history.push('/userdetails')}>User Details</button>
+                            <button onClick={() => history.push('/contact')}>Contact</button>
+                            <button onClick={() => history.push('/logout')}>Sign out<img src="arrow_input-back.svg"/>
+                            </button>
+                        </div> : <div className="header__right-block">
+                            <button onClick={() => history.push('/contact')}>Contact</button>
+                            <button onClick={() => history.push('/loginpanel')}>Sign in<img src="./arrow_input.svg"/>
+                            </button>
+                        </div>}
                 <button className="header__burger" onClick={() => toggleDrawer(!app.state.drawerOpen)}>
                     <span></span>
                     <span></span>
@@ -84,26 +101,30 @@ const Header = (props) => {
                     </button>
 
                     <div className="menu__button">
-                        <button onClick={() => {
-                            history.push('/loginpanel')
-                            toggleDrawer(false)
-                        }}>
-                            Sign in<img src="arrow_input.svg"/></button>
+                        {auth.state.isAuthenticated && auth.state.account_type === 'user' ?
+                                <button className="sign-out-button" onClick={() => history.push('/logout')}>Sign out<img
+                                        src="arrow_input-back.svg"/></button> : <button onClick={() => {
+                                    history.push('/loginpanel')
+                                    toggleDrawer(false)
+                                }}>
+                                    Sign in<img src="arrow_input.svg"/></button>}
                         <button onClick={() => {
                             history.push('/contact')
                             toggleDrawer(false)
                         }}>
                             Contact
                         </button>
-                        <button onClick={() => {
+                        {auth.state.isAuthenticated && auth.state.account_type === 'user' && <button onClick={() => {
                             history.push('/bidhistory')
                             toggleDrawer(false)
-                        }}>Bid History</button>
+                        }}>Bid History
+                        </button>}
                     </div>
-                    <div className="warning-solid">
-                        <img src="warning-solid.svg" alt="warning"/>
-                        <span>not verified</span>
-                    </div>
+                    {auth.state.isAuthenticated && auth.state.account_type === 'user' && !auth.state.identity_verified &&
+                            <div className="warning-solid">
+                                <img src="warning-solid.svg" alt="warning"/>
+                                <span>not verified</span>
+                            </div>}
                     <div className="policy">
                         <span>Terms and Conditions</span>
                         <span>Privacy Policy</span>

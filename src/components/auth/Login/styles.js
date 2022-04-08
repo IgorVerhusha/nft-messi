@@ -79,9 +79,8 @@ const styles = theme => ({
     otpInputStyle: {
         width: "4rem !important",
         height: "4rem",
-        margin: "0 1rem",
         fontSize: "2rem",
-        borderRadius: "24px",
+        borderRadius: "0",
         // border: "1px solid rgba(0, 0, 0, 0.3)",
         border: "2px solid #f3efde",
         backgroundColor: "black",

@@ -1,0 +1,22 @@
+.privacy_policy {
+  position: absolute;
+  bottom: 2.031vw;
+  right: 3.646vw;
+  display: flex;
+  gap: 2.083vw;
+
+  span {
+    font-weight: 700;
+    font-size: 0.677vw;
+    line-height: 0.833vw;
+    color: #ffffff;
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .privacy_policy {
+    display: none;
+  }
+
+}

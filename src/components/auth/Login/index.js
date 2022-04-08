@@ -82,13 +82,32 @@ const Login = (props) => {
         AuthService.Login(username, password)
                 .then(function (response) {
                     setLogin(response.data)
-                    // Login
-                    auth.dispatch({
-                        type: 'LOGIN',
-                        payload: response.data
-                    })
-                    // Set authenticated flag
-                    setIsAuthenticated(true)
+
+                    // If "account_type":"user" perform OTP
+                    if (response.data.account_type === 'admin') {
+                        // Login
+                        auth.dispatch({
+                            type: 'LOGIN',
+                            payload: response.data
+                        })
+                        // Set authenticated flag
+                        setIsAuthenticated(true)
+                    } else {
+                        setIsOTPRequired(true)
+
+                        // Generate OTP Code
+                        AuthService.SendOTP(response.data)
+                                .then(function (response) {
+                                    console.log(response.data)
+                                })
+                                .catch(function (error) {
+                                    console.log(error.response)
+                                    notifications.dispatch({
+                                        type: 'DISPLAY_ALERT',
+                                        payload: {'message': error.response.data.detail, 'severity': 'error'}
+                                    })
+                                })
+                    }
                 })
                 .catch(function (error) {
                     console.log(error.response)
@@ -116,8 +135,6 @@ const Login = (props) => {
     const handleOTPChange = (otp) => {
         console.log(otp)
         setOtpCode(otp)
-
-        // Validate OTP Code
         if (otp.length == numInputs) {
             AuthService.ValidateOTP(login, otp)
                     .then(function (response) {
@@ -145,18 +162,29 @@ const Login = (props) => {
     return (
             <>
                 <img className="background" src="background-input.png" alt="background"/>
-                <div className="login__form">
+                {!isOTPRequired ? <div className="login__form">
                     <span className="main__form-title">sign in</span>
-                    <input value={username}
+                    <input className="input" value={username}
                            onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username / E-mail"/>
-                    <input className="input-pass" type="password" placeholder="Password" value={password}
+                    <input className="input" type="password" placeholder="Password" value={password}
                            onChange={(e) => setPassword(e.target.value)}/>
-                    <button onClick={() => handleLoginClick()}>Sign in <img src="arrow_input.svg" alt=""/></button>
-                    <button onClick={() => history.push('/forgot_password')}>Forgot password?</button>
-                </div>
-                <button className="main__back" onClick={() => history.push('/loginpanel')}>
-                    <img src="arrow_back.svg" alt="arrow"/>Back
-                </button>
+                    <button className="button-sign" onClick={() => handleLoginClick()}>Sign in <img src="arrow_input.svg" alt=""/></button>
+                    <button className="button-sign" onClick={() => history.push('/forgot_password')}>Forgot password?</button>
+                </div> : <div className="login__form">
+                    <span className="main__form-title">sign in code</span>
+                    <OtpInput
+                            value={otpCode}
+                            onChange={handleOTPChange}
+                            numInputs={numInputs}
+                            inputStyle="otpInputStyle"
+                            isInputNum={true}
+                            containerStyle="otp"
+                    />
+                    <button className="button" onClick={() => handleResendCodeClick()}>Resend</button>
+                    <button className="main__back-login" onClick={() => history.push('/loginpanel')}>
+                        <img src="arrow_back.svg" alt="arrow"/>Back
+                    </button>
+                </div>}
             </>
             // <div className={classes.root}>
             //     <main className={classes.main}>

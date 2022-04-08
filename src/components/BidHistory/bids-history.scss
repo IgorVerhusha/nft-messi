@@ -1,0 +1,325 @@
+.bids-history {
+  .main__form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -40%);
+    gap: 4.167vw;
+    align-items: center;
+    width: 32.031vw;
+
+    .bid-history__title {
+      font-weight: 700;
+      font-size: 2.969vw;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, #fadf78 27.72%, #f7e9ba 78.26%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-emphasis-color: transparent;
+    }
+    .no-bids {
+      text-align: center;
+    }
+
+    .bid-history {
+      overflow: auto;
+      width: 30.052vw;
+      height: 15.443vw;
+      padding: 0 0.5vw 0 0;
+
+      &::-webkit-scrollbar {
+        width: 0.26vw;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 6px rgb(255, 255, 255);
+      }
+
+      .bid-history-elem {
+        width: 100%;
+        height: 2.214vw;
+        border-bottom: 0.026vw #424241 solid;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+          font-size: 0.885vw;
+          color: #ffffff;
+
+          &:last-child {
+            font-weight: 600;
+            background: linear-gradient(
+                            180deg,
+                            #fadf78 27.72%,
+                            #f7e9ba 78.26%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-emphasis-color: transparent;
+          }
+        }
+      }
+    }
+
+    .main__back-history {
+      z-index: 1;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.781vw;
+      font-weight: 500;
+      font-size: 0.99vw;
+      color: #d8b45d;
+      margin: 1.302vw 0 0 0;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      img {
+        width: 0.365vw;
+      }
+    }
+
+    .full-name-title {
+      margin: 50px;
+      display: flex;
+      margin-right: auto;
+      gap: 0.521vw;
+      align-items: center;
+      font-weight: 500;
+      font-size: 0.885vw;
+      color: #ffffff;
+
+      img {
+        width: 0.781vw;
+      }
+    }
+
+    .full-name {
+      display: flex;
+      justify-content: space-between;
+      margin-right: auto;
+      width: 100%;
+
+      input {
+        width: 15.625vw;
+      }
+    }
+
+    .address-title {
+      margin: 0.781vw 0 0 0;
+      display: flex;
+      margin-right: auto;
+      gap: 0.521vw;
+      align-items: center;
+      font-weight: 500;
+      font-size: 0.885vw;
+      color: #ffffff;
+
+      img {
+        width: 0.781vw;
+      }
+    }
+
+    input {
+      width: 100%;
+      height: 2.76vw;
+      background: none;
+      border: 0.052vw solid #424241;
+      padding: 0 0.911vw;
+      line-height: 0.885vw;
+      color: rgba(255, 255, 255, 0.4);
+      font-weight: 500;
+      font-size: 0.729vw;
+    }
+
+    .address-addition {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.781vw;
+      flex-direction: row;
+
+      input {
+        width: 15.625vw;
+      }
+    }
+
+    .phone-title {
+      margin: 0.781vw 0 0 0;
+      display: flex;
+      margin-right: auto;
+      gap: 0.521vw;
+      align-items: center;
+      font-weight: 500;
+      font-size: 0.885vw;
+      color: #ffffff;
+
+      img {
+        width: 0.599vw;
+      }
+    }
+
+    // button {
+    //   margin: 0.781vw 0 0 0;
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   gap: 0.781vw;
+    //   width: 11.042vw;
+    //   height: 2.76vw;
+    //   font-size: 0.99vw;
+    //   font-weight: 500;
+    //   background: none;
+    //   border: none;
+    //   color: #000000;
+    //   background: #fadf78;
+    //   img {
+    //     width: auto;
+    //     height: 0.599vw;
+    //   }
+    //   &:hover {
+    //     color: #000000;
+    //     background: linear-gradient(180deg, #fadf78 27.72%, #f7e9ba 78.26%);
+    //   }
+    // }
+  }
+}
+
+@media (max-width: 768px) {
+  .bids-history {
+    .main__form {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -41%);
+      gap: 8vw;
+      width: 92vw;
+
+      .bid-history__title {
+        font-size: 8.533vw;
+      }
+
+      .bid-history {
+        width: 100%;
+        height: 66.667vw;
+        padding: 0 2vw 0 0;
+
+        &::-webkit-scrollbar {
+          width: 1.333vw;
+        }
+
+        .bid-history-elem {
+          height: 14.133vw;
+
+          span {
+            font-size: 3.733vw;
+          }
+        }
+      }
+
+      .main__back-history {
+        font-size: 4.267vw;
+        gap: 3.733vw;
+        top: 94%;
+        margin: 0;
+
+        img {
+          width: auto;
+          height: 2.933vw;
+        }
+      }
+
+      .full-name-title {
+        margin: 4vw auto 0 0;
+        font-size: 4vw;
+        gap: 1.867vw;
+
+        img {
+          width: 3.733vw;
+        }
+      }
+
+      .full-name {
+        flex-direction: column;
+        gap: 4vw;
+
+        input {
+          width: 100%;
+        }
+      }
+
+      .address-title {
+        font-size: 4vw;
+        gap: 1.867vw;
+        margin: 4vw auto 0 0;
+
+        img {
+          width: 3.733vw;
+        }
+      }
+
+      input {
+        width: 100%;
+        height: 12.267vw;
+        padding: 0 4vw;
+        background-size: 3.733vw auto;
+        font-size: 3.733vw;
+        background-position: 4vw center;
+      }
+
+      .address-addition {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 100%;
+        gap: 4vw;
+
+        input {
+          width: 100%;
+        }
+      }
+
+      .phone-title {
+        font-size: 4vw;
+        gap: 1.867vw;
+        margin: 4vw auto 0 0;
+
+        img {
+          width: 2.933vw;
+        }
+      }
+
+      button {
+        width: 53.333vw;
+        height: 12.267vw;
+        font-size: 4vw;
+        gap: 3.2vw;
+        margin: 4vw 0 0 0;
+
+        img {
+          width: auto;
+          height: 2.667vw;
+        }
+      }
+    }
+  }
+}
+
+@media (min-aspect-ratio: 375/500) and (max-width: 1024px) {
+  .bids-history {
+    .main__form {
+      top: 67vw;
+    }
+  }
+}

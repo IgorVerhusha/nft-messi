@@ -34,7 +34,6 @@ const CountrySelect = (props) => {
             value={value}
             onChange={onChange}
             variant="outlined"
-            fullWidth
             className={classes.inputField}
         >
             {!!countryArr?.length &&

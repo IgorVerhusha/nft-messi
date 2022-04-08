@@ -7,12 +7,14 @@ import Header from "../Header";
 import Footer from "../Footer";
 import {withStyles} from '@material-ui/core'
 import './content.scss'
+import {useHistory} from 'react-router-dom'
 
 const drawerWidth = 0;
 const paddingTop = 0;
 
 const Content = props => {
     const children = props.children;
+    const history = useHistory();
     const { classes } = props;
     // Get Context
     const app = useAppContext();
@@ -59,6 +61,7 @@ const Content = props => {
         <div className="content-wrapper">
             <Header/>
             {children}
+            {history.location.pathname !== "/" && <Footer/>}
         </div>
     );
 

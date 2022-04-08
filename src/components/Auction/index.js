@@ -447,13 +447,7 @@ const Auction = (props) => {
                         <span className="auction__description">AUCTION ENDS IN:</span>
                         {auction && auction.live && <Countdown startDate={auction.auction_end}/>}
                     </div>
-                    <div className="privacy_policy">
-                        <span>Terms and Conditions</span>
-                        <span>Privacy Policy</span>
-                    </div>
                 </main>
-                {/*<Dialog open={dialogOpen} onClose={handleDialogClose} className={classes.dialogPaper} maxWidth="xs">*/}
-                {/*    <DialogContent className={classes.dialogContainer}>*/}
                 {dialogOpen && <div className="container-pay">
                     <div className="pay">
                         <button className="pay__exit" onClick={() => handleDialogClose()}>
