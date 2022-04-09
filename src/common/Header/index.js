@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link, useHistory} from 'react-router-dom'
 import {useAuthContext} from '../../services/AuthService'
 import {useNotificationContext} from '../../services/NotificationService'
@@ -10,6 +10,7 @@ const Header = () => {
     const notifications = useNotificationContext()
     const history = useHistory()
     const app = useAppContext()
+    const [hoverButton, setHoverButton] = useState(false)
 
 
     // Handlers
@@ -46,7 +47,9 @@ const Header = () => {
                 {auth.state.isAuthenticated && auth.state.account_type === 'user' ?
                         <div className="header__right-block-sign">
                             {!auth.state.identity_verified &&
-                                    <div className="verify" onClick={() => history.push('/verifyidentity')}>
+                                    <div className="verify" onClick={() => history.push('/verifyidentity')}
+                                         onMouseEnter={() => setHoverButton(true)}
+                                         onMouseLeave={() => setHoverButton(false)}>
                                         <img src="warning-yellow.svg" alt=""/>
                                         <span>not verified</span></div>}
                             <button onClick={() => history.push('/bidhistory')}>Bid History</button>
@@ -59,6 +62,9 @@ const Header = () => {
                             <button onClick={() => history.push('/loginpanel')}>Sign in<img src="./arrow_input.svg"/>
                             </button>
                         </div>}
+                {hoverButton && <div className="tooltip-header">
+                    Infortunately we could not verify your identity
+                </div>}
                 <button className="header__burger" onClick={() => toggleDrawer(!app.state.drawerOpen)}>
                     <span></span>
                     <span></span>

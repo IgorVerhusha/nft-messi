@@ -124,6 +124,7 @@
       border: none;
       color: #000000;
       background: #fadf78;
+      cursor: pointer;
 
       img {
         width: auto;
@@ -151,6 +152,9 @@
       font-weight: 500;
       font-size: 0.99vw;
       color: #d8b45d;
+      cursor: pointer;
+      width: 11.042vw;
+      height: 2.76vw;
 
       &:hover {
         background: none;
@@ -274,6 +278,7 @@
         font-size: 4vw;
         gap: 3.2vw;
         margin: 4vw 0 0 0;
+        cursor: pointer;
 
         img {
           width: auto;

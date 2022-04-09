@@ -357,13 +357,14 @@ body {
 
         .price {
           display: flex;
-          align-items: center;
           gap: 0.859vw;
+          align-items: center;
 
-          span {
+          .current-text {
             font-weight: 400;
             font-size: 0.885vw;
             color: #ffffff;
+            margin-top: 0.67vw;
           }
 
           img {
@@ -388,7 +389,7 @@ body {
         justify-content: center;
         gap: 2.161vw;
 
-        .main__description {
+        .auction__description {
           display: block;
           font-weight: 500;
           font-size: 0.938vw;
@@ -975,13 +976,16 @@ body {
           margin: 8vw 0 0 0;
           position: static;
           justify-content: center;
+
           gap: 5.867vw;
 
           .price {
             z-index: 1;
             gap: 3.5vw;
 
-            span {
+
+
+            .current-text {
               font-size: 4vw;
               margin: 2.667vw 0 0 0;
             }
@@ -1012,6 +1016,7 @@ body {
           transform: none;
           width: 112%;
           transform: translateX(-50%);
+          gap: 1vw;
           flex-direction: column;
           height: 25vw;
           background-image: url(./../../assets/img/timer-background-mobile.svg);
@@ -1264,4 +1269,26 @@ body {
       margin: 0;
     }
   }
+}
+
+.tooltip-main {
+  position: absolute;
+  z-index: 3;
+  width: 10.703vw;
+  height: 2.578vw;
+  padding: 0.417vw 0.651vw 0.417vw 1.563vw;
+  background-image: url(./../../assets/img/tooltip-main.svg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-weight: 500;
+  font-size: 0.625vw;
+  line-height: 0.833vw;
+  color: #ffffff;
+  opacity: 0.6;
+  transition: 0.2;
+  left: 13vw;
+  bottom: 0vw;
+  transform: translateY(50%);
+
 }

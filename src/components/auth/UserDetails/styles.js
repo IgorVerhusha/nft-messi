@@ -67,16 +67,16 @@ const styles = theme => ({
             color: "#f3efde",
             background: 'none',
             padding: 0,
-            // width: '6.667vw',
-            // height: '2.76vw',
         },
         "& .MuiPhoneNumber-positionStart": {
             width: '6.667vw',
             height: '2.76vw',
             margin: 0,
             justifyContent: 'center',
+            ['@media (max-width: 768px)']: {
+                width: '31.2vw',
+            },
         },
-
     },
     inputCheckbox: {
         color: "#f3efde",

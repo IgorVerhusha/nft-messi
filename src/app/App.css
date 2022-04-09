@@ -10,6 +10,21 @@
     vertical-align: baseline;
 }
 
+input, button {
+    border-radius: 0.156vw;
+}
+
+button {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    input, button  {
+        border-radius: 1.6vw;
+    }
+}
+
+
 #bg {
     /* position: fixed; */
     top: 0;

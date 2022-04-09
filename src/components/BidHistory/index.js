@@ -1,26 +1,14 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {withStyles} from '@material-ui/core'
 import {makeStyles, useTheme} from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
-import Container from '@material-ui/core/Container'
-import Typography from '@material-ui/core/Typography'
-import {Divider} from '@material-ui/core'
-import Table from '@material-ui/core/Table'
-import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
 import TableRow from '@material-ui/core/TableRow'
-import TableContainer from '@material-ui/core/TableContainer'
-import TableHead from '@material-ui/core/TableHead'
-import TablePagination from '@material-ui/core/TablePagination'
-import TableFooter from '@material-ui/core/TableFooter'
 import FirstPageIcon from '@material-ui/icons/FirstPage'
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight'
 import LastPageIcon from '@material-ui/icons/LastPage'
-import NumberFormat from 'react-number-format'
 import IconButton from '@material-ui/core/IconButton'
-
-import AuthService, {useAuthContext} from '../../services/AuthService'
 import {useAppContext} from '../../services/AppService'
 import {useNotificationContext} from '../../services/NotificationService'
 import DataService from '../../services/DataService'
@@ -43,13 +31,12 @@ export const StyledTableCell = withStyles((theme) => ({
     },
 }))(TableCell)
 
-export const StyledTableRow = withStyles((theme) => ({
+export const StyledTableRow = withStyles(() => ({
     root: {},
 }))(TableRow)
 
-const BidHistory = (props) => {
-    const {classes} = props
-    const history = useHistory();
+const BidHistory = () => {
+    const history = useHistory()
 
     // Get Context
     const notifications = useNotificationContext()
@@ -167,140 +154,24 @@ const BidHistory = (props) => {
 
 
     return (
-            <main className="bids-history">
-                <div className="main__form">
-                    <span className="bid-history__title">your bid history</span>
-                    <div className="bid-history">
-                        {bids.length > 0 ? bids.map((row, index) => (
-                                <div className="bid-history-elem" key={index}>
-                                    <span>{epochToJsDate(row.created_at)}</span>
-                                    <span>${row.bid_amount}</span>
-                                </div>)) : <div className="no-bids">No bids to display</div>}
+            <>
+                <img className="background" src="background-input.png" alt="background"/>
+                <main className="bids-history">
+                    <div className="main__form">
+                        <span className="bid-history__title">your bid history</span>
+                        <div className="bid-history">
+                            {bids.length > 0 ? bids.map((row, index) => (
+                                    <div className="bid-history-elem" key={index}>
+                                        <span>{epochToJsDate(row.created_at)}</span>
+                                        <span>${row.bid_amount}</span>
+                                    </div>)) : <div className="no-bids">No bids to display</div>}
+                        </div>
+                        <button className="main__back-history" onClick={() => history.push('/')}>
+                            <img src="arrow_back.svg" alt="arrow"/>Back
+                        </button>
                     </div>
-                    <button className="main__back-history" onClick={()=>history.push('/')}>
-                        <img src="arrow_back.svg" alt="arrow"/>Back
-                    </button>
-                </div>
-            </main>)
-    {/*<main className={classes.main}>*/
-    }
-    {/*<Container maxWidth="sm" className={classes.container}>*/
-    }
-    {/*    <div className={classes.panel}>*/
-    }
-    {/*        <Typography variant="h4">*/
-    }
-    {/*            YOUR BID HISTORY*/
-    }
-    {/*        </Typography>*/
-    }
-    {/*        <div className={classes.spacer}></div>*/
-    }
-    {/*        <Divider />*/
-    }
-    {/*        <div className={classes.spacer}></div>*/
-    }
-    {/*        <div className={classes.bidsTableContainer}>*/
-    }
-    {/*            {bids.length == 0 &&*/
-    }
-    {/*                <div>*/
-    }
-    {/*                    <Typography className={classes.message}>*/
-    }
-    {/*                        No bids to display*/
-    }
-    {/*                    </Typography>*/
-    }
-    {/*                </div>*/
-    }
-    {/*            }*/
-    }
-    {/*            {bids.length > 0 &&*/
-    }
-    {/*                <Table className={classes.table} size="small">*/
-    }
-    {/*                    <TableBody>*/
-    }
-    {/*                        {bids && bids.map((row, index) => (*/
-    }
-    {/*                            <StyledTableRow key={index}>*/
-    }
-    {/*                                <StyledTableCell>{row.username}</StyledTableCell>*/
-    }
-    {/*                                <StyledTableCell>{epochToJsDate(row.created_at)}</StyledTableCell>*/
-    }
-    {/*                                <StyledTableCell className={classes.tableBidAmount}>*/
-    }
-    {/*                                    <NumberFormat*/
-    }
-    {/*                                        prefix="$"*/
-    }
-    {/*                                        value={row.bid_amount}*/
-    }
-    {/*                                        displayType="text"*/
-    }
-    {/*                                        thousandSeparator={true}*/
-    }
-    {/*                                    />*/
-    }
-    {/*                                </StyledTableCell>*/
-    }
-    {/*                            </StyledTableRow>*/
-    }
-    {/*                        ))}*/
-    }
-    {/*                    </TableBody>*/
-    }
-    {/*                    <TableFooter>*/
-    }
-    {/*                        <StyledTableRow>*/
-    }
-    {/*                            <TablePagination*/
-    }
-    {/*                                rowsPerPageOptions={[10]}*/
-    }
-    {/*                                colSpan={8}*/
-    }
-    {/*                                count={totalCount}*/
-    }
-    {/*                                rowsPerPage={pageSize}*/
-    }
-    {/*                                page={pageNumber}*/
-    }
-    {/*                                SelectProps={{*/
-    }
-    {/*                                    inputProps: { 'aria-label': 'rows per page' },*/
-    }
-    {/*                                    native: true,*/
-    }
-    {/*                                }}*/
-    }
-    {/*                                onPageChange={handlePageChange}*/
-    }
-    {/*                                onRowsPerPageChange={handleRowsPerPageChange}*/
-    }
-    {/*                                ActionsComponent={TablePaginationActions}*/
-    }
-    {/*                            />*/
-    }
-    {/*                        </StyledTableRow>*/
-    }
-    {/*                    </TableFooter>*/
-    }
-    {/*                </Table>*/
-    }
-    {/*            }*/
-    }
-    {/*        </div>*/
-    }
-
-    {/*    </div>*/
-    }
-    {/*</Container>*/
-    }
-    {/*</main>*/
-    }
+                </main>
+            </>)
 }
 
 export default withStyles(styles)(BidHistory)

@@ -1,14 +1,14 @@
 .timer {
   display: flex;
   justify-content: center;
-  gap: 2.083vw;
+  gap: 1.9vw;
 
   .timer-elem {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0.521vw 0 0 0;
-
+    min-width: 2.8vw;
     &:last-child {
       margin-right: 0;
     }
@@ -19,7 +19,7 @@
       font-size: 0.729vw;
       text-align: center;
       color: #ffffff;
-      margin: 0.104vw 0 0 0;
+      margin: 0 0 0.5vw 0;
     }
   }
 }
@@ -48,11 +48,12 @@
     margin: 2.667vw 0 0 0;
 
     .timer-elem {
-
+      min-width: 11.2vw;
 
       .time-text {
         font-size: 12px;
         line-height: 15px;
+        margin: 0 0 1.5vw 0;
       }
     }
   }

@@ -1,11 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { withStyles } from '@material-ui/core';
-
+import React, { useEffect, useState } from 'react';
 import './timer.scss';
 
 
 const Countdown = (props) => {
-    const { classes } = props;
 
     // Component States
     const [days, setDays] = useState(0);
@@ -80,24 +77,6 @@ const Countdown = (props) => {
                             <span className="time-text">SEC</span>
                         </div>
                     </div>
-                // <div className={classes.timerContainer}>
-                //     <div className={classes.timer}>
-                //         <div className={classes.timerNumber}>{days}</div>
-                //         <div className={classes.timerText}>DAYS</div>
-                //     </div>
-                //     <div className={classes.timer}>
-                //         <div className={classes.timerNumber}>{hours}</div>
-                //         <div className={classes.timerText}>HOURS</div>
-                //     </div>
-                //     <div className={classes.timer}>
-                //         <div className={classes.timerNumber}>{minutes}</div>
-                //         <div className={classes.timerText}>MIN</div>
-                //     </div>
-                //     <div className={classes.timer}>
-                //         <div className={classes.timerNumber}>{seconds}</div>
-                //         <div className={classes.timerText}>SEC</div>
-                //     </div>
-                // </div>
             }
 
         </div>

@@ -4,6 +4,26 @@
   justify-content: space-between;
   align-items: center;
 
+  .tooltip-header {
+    position: absolute;
+    z-index: 3;
+    top: 7vw;
+    left: 60.8%;
+    width: 9.740vw;
+    height: 3.398vw;
+    padding: 1.224vw 0.651vw 0.521vw 0.651vw;
+    background-image: url(./../../assets/img/tooltip-header.svg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-weight: 500;
+    font-size: 0.625vw;
+    line-height: 0.833vw;
+    color: #ffffff;
+    opacity: 0.6;
+    transition: 0.2;
+  }
+
   .revert_img {
     transform: rotate(180deg);
   }

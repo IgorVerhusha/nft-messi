@@ -1,40 +1,15 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import {withStyles} from '@material-ui/core'
 import {makeStyles, useTheme} from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
-import Container from '@material-ui/core/Container'
-import Typography from '@material-ui/core/Typography'
-import {useMediaQuery} from 'react-responsive'
-import {Link} from 'react-router-dom'
 import IconButton from '@material-ui/core/IconButton'
-import Box from '@material-ui/core/Box'
-import {Divider} from '@material-ui/core'
-import Icon from '@material-ui/core/Icon'
-import Dialog from '@material-ui/core/Dialog'
-import DialogActions from '@material-ui/core/DialogActions'
-import DialogContent from '@material-ui/core/DialogContent'
-import DialogContentText from '@material-ui/core/DialogContentText'
-import DialogTitle from '@material-ui/core/DialogTitle'
-import TextField from '@material-ui/core/TextField'
-import NumberFormat from 'react-number-format'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import Checkbox from '@material-ui/core/Checkbox'
-import Table from '@material-ui/core/Table'
-import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
 import TableRow from '@material-ui/core/TableRow'
-import TableContainer from '@material-ui/core/TableContainer'
-import TableHead from '@material-ui/core/TableHead'
-import TablePagination from '@material-ui/core/TablePagination'
-import TableFooter from '@material-ui/core/TableFooter'
 import FirstPageIcon from '@material-ui/icons/FirstPage'
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight'
 import LastPageIcon from '@material-ui/icons/LastPage'
-
-
-import {TABLET_OR_MOBILE_MAX_WIDTH} from '../../services/Common'
 import {useAppContext} from '../../services/AppService'
 import {useAuthContext} from '../../services/AuthService'
 import {useNotificationContext} from '../../services/NotificationService'
@@ -42,7 +17,6 @@ import DataService from '../../services/DataService'
 import styles from './styles.js'
 import './aution.scss'
 import Countdown from '../Countdown'
-import {StyledTab, StyledTabs} from '../../app/StyledComponents'
 import {epochToJsDate} from '../../services/Common'
 
 export const StyledTableCell = withStyles((theme) => ({
@@ -59,7 +33,7 @@ export const StyledTableCell = withStyles((theme) => ({
     },
 }))(TableCell)
 
-export const StyledTableRow = withStyles((theme) => ({
+export const StyledTableRow = withStyles(() => ({
     root: {},
 }))(TableRow)
 
@@ -74,7 +48,6 @@ const Auction = (props) => {
     const notifications = useNotificationContext()
 
     // Component States
-    const isTabletOrMobile = useMediaQuery({maxWidth: TABLET_OR_MOBILE_MAX_WIDTH})
     const [currentBidAmount, setCurrentBidAmount] = useState(0)
     const [auction, setAuction] = useState(null)
     const loadAuction = () => {
@@ -96,6 +69,7 @@ const Auction = (props) => {
     const [pageSize, setPageSize] = useState(10)
     const [pageCount, setPageCount] = useState(0)
     const [emptyRows, setEmptyRows] = useState(0)
+    const [hoverButton, setHoverButton] = useState(false)
     const [bids, setBids] = useState([])
     const loadBids = () => {
         DataService.GetBids(false, pageNumber, pageSize)
@@ -280,7 +254,6 @@ const Auction = (props) => {
         const handleLastPageButtonClick = (event) => {
             onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1))
         }
-
         return (
                 <div className={classes.root}>
                     <IconButton
@@ -431,14 +404,23 @@ const Auction = (props) => {
 
                     <div className="current-bid">
                         <div className="price">
-                            <span>Current bid:</span>
+                            <span className="current-text">Current bid:</span>
                             <span className="time-number">$ {currentBidAmount}</span>
                         </div>
-                        {auth.state.isAuthenticated ? <button onClick={() => handleDialogOpen()} className="bid-button">
-                            Place a bid <img src="hammer.svg" alt="hammer"/>
-                        </button> : <button className="bid-button-gray" onClick={() => history.push('/loginpanel')}>
-                            Sign in to bid <img src="hammer-grey.svg" alt="hammer"/>
+                        {auth.state.isAuthenticated ? auth.identity_verified ?
+                                <button onClick={() => handleDialogOpen()} className="bid-button">
+                                    Place a bid <img src="hammer.svg" alt="hammer"/></button> :
+                                <button className="bid-button-gray"
+                                        onMouseEnter={() => setHoverButton(true)}
+                                        onMouseLeave={() => setHoverButton(false)}>
+                                    Place a bid <img src="hammer-grey.svg" alt="hammer"/>
+                                </button>
+                                     : <button className="bid-button" onClick={() => history.push('/loginpanel')}>
+                            Sign in to bid <img src="hammer.svg" alt="hammer"/>
                         </button>}
+                        {hoverButton && <div className="tooltip-main">
+                            Infortunately we could not verify your identity
+                        </div>}
                     </div>
 
                     <div className="auction__description-container">
