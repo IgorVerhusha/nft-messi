@@ -49,6 +49,21 @@ body {
   }
 }
 
+@media (min-aspect-ratio: 512/295) and (max-width: 1024px) {
+  body {
+    overflow: auto;
+    height: 56vw;
+    .wrapper {
+      .main {
+        .messi {
+          bottom: auto;
+          top: 10vw;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
   body {
     padding: 5.333vw 4vw 0;
