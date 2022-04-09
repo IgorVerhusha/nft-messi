@@ -122,6 +122,8 @@
     border: none;
     text-decoration: underline;
     color: #d8b45d;
+    border-radius: 0.156vw;
+    cursor: pointer;
 
     &:nth-child(7) {
       color: #000000;
@@ -216,6 +218,8 @@
       font-size: 4vw;
       gap: 3.2vw;
       margin: 4vw 0 0 0;
+      border-radius: 1.6vw;
+      cursor: pointer;
 
       img {
         width: auto;
@@ -227,7 +231,7 @@
     font-size: 4.267vw;
     gap: 3.733vw;
     top: 94%;
-
+    cursor: pointer;
     img {
       width: auto;
       height: 2.933vw;

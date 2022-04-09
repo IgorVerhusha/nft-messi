@@ -58,7 +58,6 @@ const Countdown = (props) => {
         setSeconds(seconds);
         setExpired(false);
     };
-    console.log('rerere')
     return (
         <div>
             {expired && <div className="expired">Expired</div>}

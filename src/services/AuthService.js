@@ -115,8 +115,6 @@ const reducer = (state, action) => {
 // Auth Context Provider component that wraps your app and makes auth object
 // available to any child component that calls useAuth().
 export function AuthContextProvider({ children }) {
-    console.log("================================== AuthContextProvider ======================================");
-
     // Check if user was already logged in in local storage
     const auth = JSON.parse(localStorage.getItem('auth') || null);
     if (auth) {

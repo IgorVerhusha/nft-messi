@@ -1,29 +1,16 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import {withStyles} from '@material-ui/core'
-import Container from '@material-ui/core/Container'
-import Typography from '@material-ui/core/Typography'
-import {Link} from 'react-router-dom'
-import FormControl from '@material-ui/core/FormControl'
-import OutlinedInput from '@material-ui/core/OutlinedInput'
-import InputLabel from '@material-ui/core/InputLabel'
-import IconButton from '@material-ui/core/IconButton'
-import Icon from '@material-ui/core/Icon'
-
-import AuthService, {useAuthContext} from '../../../services/AuthService'
+import AuthService from '../../../services/AuthService'
 import {useAppContext} from '../../../services/AppService'
 import {useNotificationContext} from '../../../services/NotificationService'
 import styles from './styles'
 import './forgot.scss'
 
-const ForgotPassword = (props) => {
-    const {classes} = props
+const ForgotPassword = () => {
     let history = useHistory()
 
-    console.log('================================== ForgotPassword ======================================')
-
     // Get Context
-    const auth = useAuthContext()
     const notifications = useNotificationContext()
     const app = useAppContext()
 
@@ -78,49 +65,6 @@ const ForgotPassword = (props) => {
                     </button>
                 </main>
             </>
-            // <div className={classes.root}>
-            //     <main className={classes.main}>
-            //         <Container maxWidth="sm" className={classes.container}>
-            //             <div className={classes.panel}>
-            //                 <Typography variant="h4">
-            //                     FORGOT PASSWORD
-            //                 </Typography>
-            //                 <div className={classes.spacer}></div>
-            //                 <div className={classes.inputContainer}>
-            //                     <OutlinedInput
-            //                         label="Username or email"
-            //                         placeholder="  USERNAME/EMAIL"
-            //                         fullWidth
-            //                         variant="outlined"
-            //                         value={username}
-            //                         onChange={(e) => setUsername(e.target.value)}
-            //                         startAdornment={
-            //                             <Icon>person</Icon>
-            //                         }
-            //                         className={classes.inputField}
-            //                     />
-            //
-            //                 </div>
-            //
-            //                 <div className={classes.spacer}></div>
-            //                 <IconButton className={classes.panelButton} color="inherit" onClick={() => handleSubmitClick()}>
-            //                     <Typography className={classes.panelButtonText}>&nbsp;SUBMIT</Typography>
-            //                 </IconButton>
-            //                 <div className={classes.spacer}></div>
-            //                 <div className={classes.spacer}></div>
-            //                 <div className={classes.spacer}></div>
-            //                 <div className={classes.spacer}></div>
-            //                 <div className={classes.spacer}></div>
-            //                 <div className={classes.spacer}></div>
-            //                 <div className={classes.spacer}></div>
-            //                 <IconButton className={classes.panelButtonBack} color="inherit" component={Link} to="/loginpanel">
-            //                     <Icon>arrow_back_ios</Icon>
-            //                     <Typography className={classes.panelButtonBackText}>&nbsp;Back</Typography>
-            //                 </IconButton>
-            //             </div>
-            //         </Container>
-            //     </main>
-            // </div>
     )
 }
 

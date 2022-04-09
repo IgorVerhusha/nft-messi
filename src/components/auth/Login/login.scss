@@ -90,6 +90,8 @@
     border: none;
     text-decoration: underline;
     color: #d8b45d;
+    border-radius: 0.156vw;
+    cursor: pointer;
 
     &:nth-child(4) {
       color: #000000;
@@ -124,7 +126,8 @@
     border: none;
     color: #000000;
     background: #fadf78;
-
+    border-radius: 0.156vw;
+    cursor: pointer;
     img {
       width: auto;
       height: 0.599vw;
@@ -157,6 +160,7 @@
   font-weight: 500;
   font-size: 0.99vw;
   color: #d8b45d;
+  cursor: pointer;
 
   img {
     width: 0.365vw;
@@ -199,6 +203,7 @@ margin: 0;
       height: 12.267vw;
       font-size: 4vw;
       gap: 3.2vw;
+      border-radius: 1.6vw;
 
       img {
         width: 5.333vw;
@@ -218,6 +223,7 @@ margin: 0;
       height: 12.267vw;
       font-size: 4vw;
       gap: 3.2vw;
+      border-radius: 1.6vw;
 
       img {
         width: 5.333vw;

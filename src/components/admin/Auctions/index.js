@@ -16,8 +16,6 @@ import styles from './styles';
 const Auctions = (props) => {
     const { classes } = props;
 
-    console.log("================================== Auctions ======================================");
-
     // Get Context
     const app = useAppContext();
     const notifications = useNotificationContext();

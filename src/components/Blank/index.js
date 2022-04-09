@@ -11,9 +11,6 @@ import styles from './styles';
 const Blank = (props) => {
     const { classes } = props;
 
-    console.log("================================== Blank ======================================");
-
-
     // Component States
 
 

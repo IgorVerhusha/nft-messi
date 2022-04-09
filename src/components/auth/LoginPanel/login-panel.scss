@@ -29,6 +29,7 @@
       border: none;
       border: 0.052vw solid #d8b45d;
       cursor: pointer;
+      border-radius: 0.156vw;
       &:hover {
         color: #d8b45d;
       }
@@ -81,6 +82,7 @@
         font-size: 4vw;
         gap: 3.2vw;
         cursor: pointer;
+        border-radius: 1.6vw;
         img {
           width: 5.333vw;
         }

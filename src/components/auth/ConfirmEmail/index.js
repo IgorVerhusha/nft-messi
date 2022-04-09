@@ -19,8 +19,6 @@ const ConfirmEmail = (props) => {
     const { classes } = props;
     let history = useHistory();
 
-    console.log("================================== ConfirmEmail ======================================");
-
     let user_id = props.match.params.user_id;
     console.log(user_id);
     let confirmation_code = props.match.params.confirmation_code;

@@ -29,6 +29,7 @@
   position: absolute;
   left: 59.714vw;
   top: 33.5vw;
+  width: 18vw;
 
   .main__description {
     display: block;
@@ -52,6 +53,7 @@
     -webkit-transition: 0.2s;
     transition: 0.2s;
     cursor: pointer;
+    border-radius: 0.156vw;
     &:hover {
       background: linear-gradient(180deg, #fadf78 27.72%, #f7e9ba 78.26%);
     }
@@ -69,6 +71,7 @@
   .main__description-container {
     top: 50%;
     transform: translateY(50%);
+    width: 18vw;
   }
 }
 
@@ -114,6 +117,7 @@
     transform: translateX(-50%);
     top: auto;
     bottom: 13.333vw;
+    width: 70vw;
 
     .main__description {
       font-size: 3.733vw;
@@ -124,6 +128,7 @@
       height: 12.267vw;
       font-size: 4vw;
       cursor: pointer;
+      border-radius: 1.6vw;
     }
   }
 }
@@ -135,6 +140,9 @@
   }
   .main__title {
     top: 30.933vw;
+  }
+  .main__button {
+    border-radius: 1.6vw;
   }
 }
 }

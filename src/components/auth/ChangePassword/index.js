@@ -19,8 +19,6 @@ const ChangePassword = (props) => {
     const {classes} = props
     let history = useHistory()
 
-    console.log('================================== ChangePassword ======================================')
-
     let user_id = props.match.params.user_id
     console.log(user_id)
     let confirmation_code = props.match.params.confirmation_code

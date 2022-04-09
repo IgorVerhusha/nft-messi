@@ -3,8 +3,7 @@ import { Redirect } from 'react-router-dom';
 
 import { useAuthContext} from "../../../services/AuthService";
 
-const Logout = ( props) => { 
-    console.log("================================== Logout ======================================");
+const Logout = ( props) => {
 
     //localStorage.removeItem("auth")
 

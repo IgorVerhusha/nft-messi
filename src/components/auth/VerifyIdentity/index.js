@@ -11,8 +11,6 @@ const VerifyIdentity = (props) => {
     const {classes} = props
     let history = useHistory()
 
-    console.log('================================== VerifyIdentity ======================================')
-
     const inputFileFront = useRef(null)
     const inputFileBack = useRef(null)
     const inputFilePhoto = useRef(null)

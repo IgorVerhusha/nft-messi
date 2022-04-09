@@ -61,21 +61,22 @@ const styles = theme => ({
     },
     phoneNumberInput: {
 
-        // border: "2px solid #f3efde",
-        // borderRadius: "30px",
-        // marginBottom: "30px",
-        // marginRight: "20px",
-        // color: "#f3efde",
-        // "& .MuiOutlinedInput-input": {
-        //     marginLeft: 0,
-        //     padding: "14px 14px",
-        // },
         "& .MuiOutlinedInput-root": {
             border: "0.052vw solid #424241",
             borderRadius: '0',
             color: "#f3efde",
             background: 'none',
+            padding: 0,
+            // width: '6.667vw',
+            // height: '2.76vw',
         },
+        "& .MuiPhoneNumber-positionStart": {
+            width: '6.667vw',
+            height: '2.76vw',
+            margin: 0,
+            justifyContent: 'center',
+        },
+
     },
     inputCheckbox: {
         color: "#f3efde",

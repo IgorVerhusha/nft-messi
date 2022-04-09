@@ -16,8 +16,6 @@ const LoginPanel = (props) => {
     const {classes} = props
     const history = useHistory()
 
-    console.log('================================== LoginPanel ======================================')
-
     // Get Context
     const app = useAppContext()
 

@@ -51,9 +51,6 @@ export const StyledTableRow = withStyles((theme) => ({
 const Bids = (props) => {
     const { classes } = props;
 
-    console.log("================================== Bids ======================================");
-
-
     // Get Context
     const notifications = useNotificationContext();
     const app = useAppContext();

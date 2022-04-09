@@ -27,7 +27,6 @@ import AuctionMobile from '../components/AuctionMobile/index.js'
 
 const AppRouter = (props) => {
 
-  console.log("================================== AppRouter ======================================");
     const isTabletOrMobile = useMediaQuery({ maxWidth: TABLET_OR_MOBILE_MAX_WIDTH });
 
   function AuthenticatedRoute({ component: Component, ...rest }) {

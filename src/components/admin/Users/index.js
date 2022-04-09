@@ -37,8 +37,6 @@ import styles from './styles';
 const Users = (props) => {
     const { classes } = props;
 
-    console.log("================================== Users ======================================");
-
     // Get Context
     const app = useAppContext();
     const notifications = useNotificationContext();
