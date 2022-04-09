@@ -37,7 +37,7 @@ const LoginPanel = (props) => {
 
     return (
             <>
-                <img className="background" src="background.png" alt="background"/>
+                <img className="background" src="background-input.png" alt="background"/>
                 <main className="main-login">
                     <div className="main__form">
                         <button onClick={() => history.push('/login')}>Sign in <img src="arrow_input.svg" alt=""/>
