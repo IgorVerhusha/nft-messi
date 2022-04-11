@@ -14,10 +14,7 @@ import styles from './styles';
 
 const SettingsMenu = (props) => {
     const { classes } = props;
-    const { history } = props;
     let { page } = props;
-
-    console.log("================================== SettingsMenu ======================================");
 
     // Get Auth Context
     const auth = useAuthContext();

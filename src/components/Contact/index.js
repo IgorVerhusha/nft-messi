@@ -1,18 +1,11 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useEffect} from 'react'
 import {withStyles} from '@material-ui/core'
-import Container from '@material-ui/core/Container'
-import Typography from '@material-ui/core/Typography'
-import TwitterIcon from '@material-ui/icons/Twitter'
-import InstagramIcon from '@material-ui/icons/Instagram'
-
 import {useAppContext} from '../../services/AppService'
-import DataService from '../../services/DataService'
 import styles from './styles'
 import './contact.scss'
 
 
 const Contact = (props) => {
-    const {classes} = props
 
     // Get Context
     const app = useAppContext()

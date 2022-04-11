@@ -16,9 +16,6 @@ import styles from './styles';
 
 const Profile = (props) => {
     const { classes } = props;
-    const { history } = props;
-
-    console.log("================================== Profile ======================================");
 
     // Get Context
     const auth = useAuthContext();

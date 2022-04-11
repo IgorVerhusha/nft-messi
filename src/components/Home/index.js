@@ -1,13 +1,6 @@
-import React, {useEffect, useRef, useState} from 'react'
-import {withStyles} from '@material-ui/core'
-import Container from '@material-ui/core/Container'
-import Typography from '@material-ui/core/Typography'
-import {useMediaQuery} from 'react-responsive'
-import {Link, useHistory} from 'react-router-dom'
-import IconButton from '@material-ui/core/IconButton'
-import {TABLET_OR_MOBILE_MAX_WIDTH} from '../../services/Common'
+import React, {useEffect,  useState} from 'react'
+import { useHistory} from 'react-router-dom'
 import {useAppContext} from '../../services/AppService'
-import {useAuthContext} from '../../services/AuthService'
 import DataService from '../../services/DataService'
 import './home.scss'
 import Countdown from '../Countdown/index.js'
@@ -17,10 +10,8 @@ const Home = () => {
 
     // Get Context
     const app = useAppContext()
-    const auth = useAuthContext()
     const history = useHistory()
     // Component States
-    const isTabletOrMobile = useMediaQuery({maxWidth: TABLET_OR_MOBILE_MAX_WIDTH})
     const [auction, setAuction] = useState(null)
     const loadAuction = () => {
         DataService.GetAuctionDetails()
@@ -73,75 +64,6 @@ const Home = () => {
                 {auction && auction.ended && <div className="main__description-container">
                     <span className="main__description">AUCTION HAS ENDED</span>
                 </div>}
-                {/*    <Container maxWidth="sm" className={classes.container}>*/}
-                {/*        <div className={classes.panel}>*/}
-                {/*            <div className={classes.auctionContainer}>*/}
-                {/*                {auction && !auction.live && !auction.ended &&*/}
-                {/*                    <div className={classes.auctionTitleContainer}>*/}
-                {/*                        <Typography className={classes.auctionTitle}>*/}
-                {/*                            AUCTION STARTS IN:*/}
-                {/*                        </Typography>*/}
-                {/*                        <div className={classes.auctionCountdownContainer}>*/}
-                {/*                            <Countdown startDate={auction.auction_start}></Countdown>*/}
-                {/*                        </div>*/}
-                {/*                        <div className={classes.spacer}></div>*/}
-                {/*                        {!auth.state.isAuthenticated &&*/}
-                {/*                            <IconButton className={classes.panelButton} color="inherit" component={Link} to="/loginpanel">*/}
-                {/*                                <Typography className={classes.panelButtonText}>&nbsp;REGISTER</Typography>*/}
-                {/*                            </IconButton>*/}
-                {/*                        }*/}
-                {/*                        <div className={classes.spacer}></div>*/}
-                {/*                    </div>*/}
-                {/*                }*/}
-                {/*                {auction && auction.live && <Countdown startDate={auction.auction_end} />}*/}
-                {/*                    <div className={classes.countdownContainer}>*/}
-                {/*                        <Typography className={classes.auctionTitle}>*/}
-                {/*                            AUCTION IS LIVE - ENDS IN:*/}
-                {/*                        </Typography>*/}
-                {/*                        <div className={classes.auctionCountdownContainer}>*/}
-                {/*                            <Countdown startDate={auction.auction_end}></Countdown>*/}
-                {/*                        </div>*/}
-                {/*                        <div className={classes.spacer}></div>*/}
-                {/*                        <div className={classes.buttons}>*/}
-                {/*                        {!auth.state.isAuthenticated &&*/}
-                {/*                            <IconButton className={classes.panelButton} color="inherit" component={Link} to="/loginpanel">*/}
-                {/*                                <Typography className={classes.panelButtonText}>&nbsp;SIGN IN</Typography>*/}
-                {/*                            </IconButton>*/}
-                {/*                        }*/}
-                {/*                        <IconButton className={classes.panelButton} color="inherit" component={Link} to="/auction">*/}
-                {/*                            <Typography className={classes.panelButtonText}>&nbsp;VIEW</Typography>*/}
-                {/*                        </IconButton>*/}
-                {/*                        </div>*/}
-                {/*                        <div className={classes.spacer}></div>*/}
-                {/*                    </div>*/}
-                {/*                }*/}
-                {/*                {auction && auction.ended &&*/}
-                {/*                    <div>*/}
-                {/*                        <Typography className={classes.auctionTitle}>*/}
-                {/*                            AUCTION HAS ENDED*/}
-                {/*                        </Typography>*/}
-
-                {/*                        <div className={classes.spacer}></div>*/}
-
-                {/*                        <IconButton className={classes.panelButton} color="inherit" component={Link} to="/auction">*/}
-                {/*                            <Typography className={classes.panelButtonText}>&nbsp;VIEW</Typography>*/}
-                {/*                        </IconButton>*/}
-                {/*                        <div className={classes.spacer}></div>*/}
-                {/*                    </div>*/}
-                {/*                }*/}
-
-                {/*                {!isTabletOrMobile &&*/}
-                {/*                    <div>*/}
-                {/*                        <Typography className={classes.auctionDescription}>*/}
-                {/*                            Own a 1 of 1 NFT with unique experience of <br />Ballon d'Or 2021 of Lionel Messi*/}
-                {/*                        </Typography>*/}
-                {/*                    </div>*/}
-                {/*                }*/}
-
-                {/*            </div>*/}
-                {/*        </div>*/}
-                {/*    </Container>*/}
-                {/*</main>*/}
             </div>
     )
 }

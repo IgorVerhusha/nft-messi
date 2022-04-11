@@ -5,8 +5,6 @@ import { useAuthContext} from "../../../services/AuthService";
 
 const Logout = ( props) => {
 
-    //localStorage.removeItem("auth")
-
     // Get Auth Context
     const auth = useAuthContext();
 

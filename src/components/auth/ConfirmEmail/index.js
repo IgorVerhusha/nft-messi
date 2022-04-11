@@ -1,14 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useHistory } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
 import { withStyles } from '@material-ui/core';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
 import IconButton from '@material-ui/core/IconButton';
 import Icon from '@material-ui/core/Icon';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+
 
 import AuthService, { useAuthContext } from "../../../services/AuthService";
 import { useAppContext } from '../../../services/AppService';
@@ -17,8 +14,6 @@ import styles from './styles';
 
 const ConfirmEmail = (props) => {
     const { classes } = props;
-    let history = useHistory();
-
     let user_id = props.match.params.user_id;
     console.log(user_id);
     let confirmation_code = props.match.params.confirmation_code;

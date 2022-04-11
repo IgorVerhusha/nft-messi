@@ -15,9 +15,6 @@ import styles from './styles';
 
 const Account = (props) => {
     const { classes } = props;
-    const { history } = props;
-
-    console.log("================================== Account ======================================");
 
     // Get Context
     const auth = useAuthContext();
